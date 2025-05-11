@@ -1,12 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from "react";
+import AgeVerification from "@/components/AgeVerification";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/sections/HeroSection";
+import StorySection from "@/components/sections/StorySection";
+import ProductsSection from "@/components/sections/ProductsSection";
+import CocktailsSection from "@/components/sections/CocktailsSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
+  const [ageVerified, setAgeVerified] = useState(false);
+
+  const handleAgeVerification = () => {
+    setAgeVerified(true);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen overflow-x-hidden bg-black text-white">
+      <AgeVerification onVerify={handleAgeVerification} />
+      <Header />
+      <main>
+        <HeroSection ageVerified={ageVerified} />
+        <StorySection />
+        <ProductsSection />
+        <CocktailsSection />
+        <ContactSection />
+      </main>
+      <Footer />
     </div>
   );
 };
