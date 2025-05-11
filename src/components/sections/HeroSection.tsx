@@ -92,8 +92,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
         </div>
       </div>
       
-      {/* Animación del Gallo - Modificado para que se asome parcialmente con ángulo */}
-      <div className={`fixed right-0 top-1/2 transform -translate-y-1/2 z-40 transition-all duration-1000 ease-in-out ${showRooster ? 'translate-x-[70%]' : 'translate-x-full'}`}>
+      {/* Animación del Gallo - Modificado para que se asome más */}
+      <div className={`fixed right-0 top-1/2 transform -translate-y-1/2 z-40 transition-all duration-1000 ease-in-out ${showRooster ? 'translate-x-[50%]' : 'translate-x-full'}`}>
         <img 
           src="/lovable-uploads/df6b1d3e-a626-4824-940f-c3017edb0a21.png" 
           alt="Gallero Mascot" 
