@@ -10,44 +10,43 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center">
-      {/* Video background */}
+      {/* Imagen de fondo */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="hero-overlay"></div>
+        <div className="hero-overlay bg-black/70 z-10"></div>
+        <img 
+          src="/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png" 
+          alt="Fondo Gallero" 
+          className="absolute w-full h-full object-cover opacity-40"
+        />
+        
+        {/* Video de fondo (solo si la edad está verificada) */}
         {ageVerified && (
           <video 
             autoPlay 
             muted 
             loop 
             playsInline
-            className="absolute w-full h-full object-cover"
+            className="absolute w-full h-full object-cover mix-blend-overlay opacity-60"
           >
             <source src="https://cdn.coverr.co/videos/coverr-pouring-tequila-into-shot-glass-1589/1080p.mp4" type="video/mp4" />
             Tu navegador no soporta el tag de video.
           </video>
         )}
-        {/* Fallback image for when video can't play or age verification isn't complete */}
-        {!ageVerified && (
-          <img 
-            src="/lovable-uploads/dcc56214-4a30-442f-b741-07f29b5d7239.png" 
-            alt="Fondo de Tequila" 
-            className="absolute w-full h-full object-cover"
-          />
-        )}
       </div>
       
       <div className="container relative z-20 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
-            <span className="text-gradient">GALLERO</span> <span className="font-light">TEQUILA</span>
+        <div className="max-w-3xl mx-auto backdrop-blur-sm py-12 px-6 rounded-lg bg-black/30 border border-primary/20">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up">
+            <span className="text-gradient">GALLERO</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 animate-slide-up animate-stagger-1">
+          <p className="text-xl md:text-2xl lg:text-3xl mb-8 text-white animate-slide-up animate-stagger-1 font-light">
             Experimenta el sabor extraordinario del tequila premium crema de fresa
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animate-stagger-2">
-            <Button className="btn-primary" size="lg" onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}>
-              Explorar Nuestros Productos
+            <Button className="btn-primary text-lg" size="lg" onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}>
+              Explorar Productos
             </Button>
-            <Button variant="outline" className="btn-outline" size="lg" onClick={() => document.getElementById('our-story')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button variant="outline" className="btn-outline text-lg" size="lg" onClick={() => document.getElementById('our-story')?.scrollIntoView({ behavior: 'smooth' })}>
               Nuestra Historia
             </Button>
           </div>
