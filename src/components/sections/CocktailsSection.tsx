@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { GlassWater } from "lucide-react";
 
 interface Cocktail {
@@ -89,19 +88,9 @@ const CocktailsSection: React.FC = () => {
                     </ol>
                   </div>
                 )}
-                
-                <Button className="btn-primary mt-4">
-                  Ver Receta Completa
-                </Button>
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="text-center mt-16">
-          <Button variant="outline" className="btn-outline" size="lg">
-            Ver Más Creaciones
-          </Button>
         </div>
       </div>
     </section>

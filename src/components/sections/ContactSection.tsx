@@ -8,7 +8,7 @@ import { toast } from "@/components/ui/sonner";
 const ContactSection: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Thank you for your message! We'll be in touch soon.");
+    toast.success("¡Gracias por tu mensaje! Nos pondremos en contacto pronto.");
     // Reset form
     (e.target as HTMLFormElement).reset();
   };
@@ -19,38 +19,38 @@ const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="text-gradient">Get In Touch</span>
+              <span className="text-gradient">Contáctanos</span>
             </h2>
             <p className="text-lg text-gray-300 mb-8">
-              Have questions about our products or interested in stocking Gallero Tequila in your establishment? We'd love to hear from you.
+              ¿Tienes preguntas sobre nuestros productos o estás interesado en tener Tequila Gallero en tu establecimiento? Nos encantaría saber de ti.
             </p>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
+                <h3 className="text-xl font-semibold mb-2">Visítanos</h3>
                 <p className="text-gray-300">
-                  Distillery & Tasting Room<br />
+                  Destilería y Sala de Degustación<br />
                   Calle Principal 123<br />
                   Tequila, Jalisco<br />
-                  Mexico
+                  México
                 </p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-2">Contact Information</h3>
+                <h3 className="text-xl font-semibold mb-2">Información de Contacto</h3>
                 <p className="text-gray-300 mb-1">
-                  <strong>Email:</strong> info@gallerotequila.com
+                  <strong>Correo:</strong> info@gallerotequila.com
                 </p>
                 <p className="text-gray-300 mb-1">
-                  <strong>Phone:</strong> +52 123 456 7890
+                  <strong>Teléfono:</strong> +52 123 456 7890
                 </p>
                 <p className="text-gray-300">
-                  <strong>Hours:</strong> Mon-Fri: 9am - 5pm (CST)
+                  <strong>Horario:</strong> Lun-Vie: 9am - 5pm (CST)
                 </p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
+                <h3 className="text-xl font-semibold mb-2">Síguenos</h3>
                 <div className="flex gap-4">
                   <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/30 transition-colors">
                     <span className="sr-only">Facebook</span>
@@ -73,28 +73,28 @@ const ContactSection: React.FC = () => {
             <div className="glass-card p-8 rounded-2xl relative">
               <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-2xl blur-sm opacity-70"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-6 text-center">Send Us a Message</h3>
+                <h3 className="text-2xl font-bold mb-6 text-center">Envíanos un Mensaje</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-                        Name
+                        Nombre
                       </label>
                       <Input
                         id="name"
-                        placeholder="Your name"
+                        placeholder="Tu nombre"
                         className="bg-white/5 border-white/10 text-white focus:border-primary"
                         required
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-                        Email
+                        Correo
                       </label>
                       <Input
                         id="email"
                         type="email"
-                        placeholder="Your email"
+                        placeholder="Tu correo"
                         className="bg-white/5 border-white/10 text-white focus:border-primary"
                         required
                       />
@@ -103,11 +103,11 @@ const ContactSection: React.FC = () => {
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
-                      Subject
+                      Asunto
                     </label>
                     <Input
                       id="subject"
-                      placeholder="Message subject"
+                      placeholder="Asunto del mensaje"
                       className="bg-white/5 border-white/10 text-white focus:border-primary"
                       required
                     />
@@ -115,11 +115,11 @@ const ContactSection: React.FC = () => {
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-                      Message
+                      Mensaje
                     </label>
                     <Textarea
                       id="message"
-                      placeholder="Your message"
+                      placeholder="Tu mensaje"
                       className="bg-white/5 border-white/10 text-white focus:border-primary"
                       rows={5}
                       required
@@ -128,7 +128,7 @@ const ContactSection: React.FC = () => {
                   
                   <div className="flex justify-center">
                     <Button type="submit" className="btn-primary" size="lg">
-                      Send Message
+                      Enviar Mensaje
                     </Button>
                   </div>
                 </form>
