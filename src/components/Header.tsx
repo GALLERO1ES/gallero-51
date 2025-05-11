@@ -28,14 +28,14 @@ const Header: React.FC = () => {
       <div className="container-fluid flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <h1 className="text-2xl font-bold font-playfair text-white">
-            <span className="text-primary">Gallero</span> Tequila
+            <span className="text-primary">Gallero</span>
           </h1>
         </Link>
 
         {/* Imagen de botella en la esquina derecha */}
-        <div className="absolute right-20 top-0 h-16 md:h-20 lg:h-24 z-10 hidden md:block">
+        <div className="absolute right-0 top-0 h-[70vh] md:h-[80vh] lg:h-[90vh] z-10 hidden md:block">
           <img 
-            src="/lovable-uploads/fe0f1674-8bbb-493a-bab5-127d0630c71c.png" 
+            src="/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png" 
             alt="Botella Gallero" 
             className="h-full object-contain"
           />
