@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Cocktail } from "lucide-react";
+import { GlassWater } from "lucide-react";
 
 interface Cocktail {
   id: number;
@@ -65,7 +65,7 @@ const CocktailsSection: React.FC = () => {
               </div>
               <div className="w-full lg:w-1/2 glass-card p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Cocktail className="text-primary" size={28} />
+                  <GlassWater className="text-primary" size={28} />
                   <h3 className="text-2xl md:text-3xl font-bold">{cocktail.name}</h3>
                 </div>
                 <p className="text-lg text-gray-300 mb-6">{cocktail.description}</p>
