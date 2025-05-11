@@ -1,12 +1,15 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Cocktail } from "lucide-react";
 
 interface Cocktail {
   id: number;
   name: string;
   description: string;
   ingredients: string[];
+  preparation?: string[];
+  decoration?: string;
   image: string;
 }
 
@@ -14,24 +17,21 @@ const CocktailsSection: React.FC = () => {
   const cocktails: Cocktail[] = [
     {
       id: 1,
-      name: "Delicia de Fresa",
-      description: "Un cóctel refrescante con nuestro Tequila Crema de Fresa, lima fresca y menta.",
-      ingredients: ["60ml Gallero Crema de Fresa", "30ml zumo de lima fresco", "15ml néctar de agave", "Hojas de menta fresca", "Agua con gas"],
-      image: "https://images.unsplash.com/photo-1486428128344-5413e434ad35?q=80&w=1974&auto=format&fit=crop"
-    },
-    {
-      id: 2,
-      name: "Atardecer Jalisciense",
-      description: "Un cóctel vibrante y tropical que equilibra perfectamente la dulzura con el suave golpe de nuestro tequila premium.",
-      ingredients: ["60ml Gallero Blanco", "30ml zumo de naranja", "30ml zumo de piña", "15ml granadina", "Rodaja de naranja para decorar"],
-      image: "https://images.unsplash.com/photo-1582538884247-ae5e4costudios03?q=80&w=1974&auto=format&fit=crop"
-    },
-    {
-      id: 3,
-      name: "Mula Mexicana",
-      description: "Nuestra versión picante del clásico mule, con nuestro tequila Reposado y un toque de jengibre.",
-      ingredients: ["60ml Gallero Reposado", "15ml zumo de lima", "Cerveza de jengibre", "Rodaja de jalapeño", "Rodaja de lima para decorar"],
-      image: "https://images.unsplash.com/photo-1613676138902-fdf245798ade?q=80&w=1974&auto=format&fit=crop"
+      name: "Gallero Espresso",
+      description: "Un martini cremoso con alma de horchata y carácter de café. Ideal como digestivo o para una noche especial.",
+      ingredients: [
+        "60 ml de licor de tequila sabor horchata",
+        "30 ml de café espresso",
+        "15 ml de licor de café (como Kahlúa)",
+        "Hielo",
+        "Granos de café para decorar"
+      ],
+      preparation: [
+        "Agita todos los ingredientes en una coctelera con hielo.",
+        "Cuela en una copa tipo martini.",
+        "Decora con 2 o 3 granos de café encima."
+      ],
+      image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1974&auto=format&fit=crop"
     }
   ];
 
@@ -43,7 +43,7 @@ const CocktailsSection: React.FC = () => {
             <span className="text-gradient">Cócteles Exclusivos</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Eleva tu experiencia con nuestras recetas de cócteles artesanales, diseñadas para mostrar los sabores distintivos de Gallero Tequila.
+            Eleva tu experiencia con nuestras recetas de cócteles artesanales, diseñadas para mostrar los sabores distintivos de Gallero.
           </p>
         </div>
         
@@ -63,18 +63,36 @@ const CocktailsSection: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="w-full lg:w-1/2">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">{cocktail.name}</h3>
-                <p className="text-lg text-gray-300 mb-4">{cocktail.description}</p>
+              <div className="w-full lg:w-1/2 glass-card p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Cocktail className="text-primary" size={28} />
+                  <h3 className="text-2xl md:text-3xl font-bold">{cocktail.name}</h3>
+                </div>
+                <p className="text-lg text-gray-300 mb-6">{cocktail.description}</p>
+                
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-primary mb-2">Ingredientes:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-300">
+                  <h4 className="text-lg font-semibold text-primary mb-3">Ingredientes:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-300 ml-2">
                     {cocktail.ingredients.map((ingredient, i) => (
                       <li key={i}>{ingredient}</li>
                     ))}
                   </ul>
                 </div>
-                <Button className="btn-primary">Ver Receta Completa</Button>
+                
+                {cocktail.preparation && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-primary mb-3">Preparación:</h4>
+                    <ol className="list-decimal list-inside space-y-2 text-gray-300 ml-2">
+                      {cocktail.preparation.map((step, i) => (
+                        <li key={i} className="pl-1">{step}</li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+                
+                <Button className="btn-primary mt-4">
+                  Ver Receta Completa
+                </Button>
               </div>
             </div>
           ))}
@@ -82,7 +100,7 @@ const CocktailsSection: React.FC = () => {
         
         <div className="text-center mt-16">
           <Button variant="outline" className="btn-outline" size="lg">
-            Ver Todos los Cócteles
+            Ver Más Creaciones
           </Button>
         </div>
       </div>

@@ -28,12 +28,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center">
       {/* Imagen de fondo */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="hero-overlay bg-black/50 z-10"></div>
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="hero-overlay bg-black/80 z-10"></div>
         <img 
           src="/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png" 
           alt="Fondo Gallero" 
-          className="absolute w-full h-full object-cover opacity-40"
+          className="absolute w-full h-full object-cover opacity-20"
         />
         
         {/* Video de fondo (solo si la edad está verificada) */}
@@ -43,7 +43,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
             muted 
             loop 
             playsInline
-            className="absolute w-full h-full object-cover mix-blend-overlay opacity-60"
+            className="absolute w-full h-full object-cover mix-blend-overlay opacity-40"
           >
             <source src="https://cdn.coverr.co/videos/coverr-pouring-tequila-into-shot-glass-1589/1080p.mp4" type="video/mp4" />
             Tu navegador no soporta el tag de video.
@@ -75,7 +75,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
           <div className="hidden md:block relative">
             <div className="relative z-30 product-highlight">
               <img 
-                src="/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png" 
+                src="/lovable-uploads/ba893a4e-3791-4be0-af81-5c616df8bb89.png" 
                 alt="Gallero Tequila" 
                 className="h-[500px] object-contain mx-auto"
               />
