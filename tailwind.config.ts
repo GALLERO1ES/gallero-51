@@ -23,6 +23,8 @@ export default {
         inter: ['Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         playfair: ['Playfair Display', 'serif'],
+        kritik: ['Kritik-trial', 'sans-serif'],
+        times: ['Times New Roman', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -31,11 +33,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#CEC26B",
           foreground: "hsl(var(--primary-foreground))"
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "#CEC26B",
           foreground: "hsl(var(--secondary-foreground))"
         },
         destructive: {
@@ -58,6 +60,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
         },
+        golden: "#CEC26B",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -31,21 +31,15 @@ const ContactSection: React.FC = () => {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold mb-2">Información de Contacto</h3>
-                <p className="text-gray-300 mb-1">
+                <p className="text-gray-300 mb-3">
                   <strong>Correo:</strong> {contactEmail}
-                </p>
-                <p className="text-gray-300 mb-1">
-                  <strong>Teléfono:</strong> +52 123 456 7890
-                </p>
-                <p className="text-gray-300">
-                  <strong>Horario:</strong> Lun-Vie: 9am - 5pm (CST)
                 </p>
               </div>
               
               <div>
                 <h3 className="text-xl font-semibold mb-2">Síguenos</h3>
                 <div className="flex gap-4">
-                  <a href="https://www.instagram.com/gallero_es/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/30 transition-colors">
+                  <a href="https://www.instagram.com/gallero_es/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-golden/30 transition-colors">
                     <span className="sr-only">Instagram</span>
                     <Instagram className="text-white" size={20} />
                   </a>
@@ -56,7 +50,7 @@ const ContactSection: React.FC = () => {
           
           <div>
             <div className="glass-card p-8 rounded-2xl relative">
-              <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-2xl blur-sm opacity-70"></div>
+              <div className="absolute -inset-1 bg-gradient-to-br from-golden/30 to-golden/30 rounded-2xl blur-sm opacity-70"></div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-6 text-center">Envíanos un Mensaje</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -68,7 +62,7 @@ const ContactSection: React.FC = () => {
                       <Input
                         id="name"
                         placeholder="Tu nombre"
-                        className="bg-white/5 border-white/10 text-white focus:border-primary"
+                        className="bg-white/5 border-white/10 text-white focus:border-golden"
                         required
                       />
                     </div>
@@ -80,7 +74,7 @@ const ContactSection: React.FC = () => {
                         id="email"
                         type="email"
                         placeholder="Tu correo"
-                        className="bg-white/5 border-white/10 text-white focus:border-primary"
+                        className="bg-white/5 border-white/10 text-white focus:border-golden"
                         defaultValue={contactEmail}
                         required
                       />
@@ -94,7 +88,7 @@ const ContactSection: React.FC = () => {
                     <Input
                       id="subject"
                       placeholder="Asunto del mensaje"
-                      className="bg-white/5 border-white/10 text-white focus:border-primary"
+                      className="bg-white/5 border-white/10 text-white focus:border-golden"
                       required
                     />
                   </div>
@@ -106,7 +100,7 @@ const ContactSection: React.FC = () => {
                     <Textarea
                       id="message"
                       placeholder="Tu mensaje"
-                      className="bg-white/5 border-white/10 text-white focus:border-primary"
+                      className="bg-white/5 border-white/10 text-white focus:border-golden"
                       rows={5}
                       required
                     />

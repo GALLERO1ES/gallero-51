@@ -37,10 +37,10 @@ const Header: React.FC = () => {
           onClick={scrollToTop}
           className="cursor-pointer transform transition-all duration-300 hover:scale-110"
         >
-          <h1 className="text-2xl md:text-3xl font-bold font-playfair text-white">
+          <h1 className="text-2xl md:text-3xl font-bold font-kritik text-white">
             <span className="text-gradient relative hover:animate-pulse">
               Gallero
-              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-golden transition-all group-hover:w-full"></span>
             </span>
           </h1>
         </div>
