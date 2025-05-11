@@ -13,17 +13,17 @@ const ProductsSection: React.FC = () => {
   const products: Product[] = [
     {
       id: 1,
-      name: "Tequila Crema de Fresa",
-      description: "Nuestra mezcla insignia, combinando tequila premium con la dulce esencia de crema de fresa para una experiencia excepcionalmente suave.",
-      image: "/lovable-uploads/dcc56214-4a30-442f-b741-07f29b5d7239.png",
-      color: "from-pink-500/20 to-red-500/20"
-    },
-    {
-      id: 2,
       name: "Tequila Crema de Horchata",
       description: "Una fusión exquisita de tequila premium con la tradicional horchata mexicana, creando una bebida cremosa con notas de canela y vainilla.",
       image: "/lovable-uploads/09af178b-0818-4cdc-8747-4708ebea11be.png",
       color: "from-amber-500/20 to-yellow-500/20"
+    },
+    {
+      id: 2,
+      name: "Tequila Crema de Fresa",
+      description: "Nuestra mezcla insignia, combinando tequila premium con la dulce esencia de crema de fresa para una experiencia excepcionalmente suave.",
+      image: "/lovable-uploads/dcc56214-4a30-442f-b741-07f29b5d7239.png",
+      color: "from-pink-500/20 to-red-500/20"
     }
   ];
 

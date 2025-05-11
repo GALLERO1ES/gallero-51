@@ -94,21 +94,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
       
       {/* Animación del Gallo */}
       <div className={`fixed right-0 top-1/2 transform -translate-y-1/2 z-40 transition-all duration-1000 ease-in-out ${showRooster ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="relative">
-          <div className="rooster-container w-32 h-64 overflow-hidden">
-            <div className="rooster-animation bg-primary/20 backdrop-blur-md p-4 rounded-l-lg border-l border-y border-primary/30">
-              <div className="flex justify-center items-center h-full">
-                <svg viewBox="0 0 100 100" width="100" height="100" fill="currentColor" className="text-primary animate-pulse">
-                  <path d="M50,10 C40,10 30,20 30,35 C30,45 35,50 40,55 C45,60 45,65 40,70 C35,75 25,75 20,85 C15,95 25,95 30,90 C35,85 40,85 45,85 C50,85 55,80 55,75 C55,70 50,65 50,60 C50,55 55,55 60,50 C65,45 70,40 70,30 C70,20 60,10 50,10 Z" />
-                  <circle cx="45" cy="30" r="3" className="text-white" />
-                </svg>
-              </div>
-              <div className="text-center mt-4 text-white font-bold">
-                ¡Gallero!
-              </div>
-            </div>
-          </div>
-        </div>
+        <img 
+          src="/lovable-uploads/df6b1d3e-a626-4824-940f-c3017edb0a21.png" 
+          alt="Gallero Mascot" 
+          className="h-64 object-contain animate-pulse"
+        />
       </div>
     </section>
   );
