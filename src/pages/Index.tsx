@@ -4,9 +4,9 @@ import AgeVerification from "@/components/AgeVerification";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import StorySection from "@/components/sections/StorySection";
 import ProductsSection from "@/components/sections/ProductsSection";
 import CocktailsSection from "@/components/sections/CocktailsSection";
+import StorySection from "@/components/sections/StorySection";
 import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
@@ -22,9 +22,9 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection ageVerified={ageVerified} />
-        <StorySection />
         <ProductsSection />
         <CocktailsSection />
+        <StorySection />
         <ContactSection />
       </main>
       <Footer />

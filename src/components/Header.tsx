@@ -46,9 +46,9 @@ const Header: React.FC = () => {
         {!isMobile ? (
           <nav>
             <ul className="flex items-center gap-8">
-              <li><a href="#our-story" className="nav-link text-lg font-mexican">Nuestra Historia</a></li>
               <li><a href="#products" className="nav-link text-lg font-mexican">Productos</a></li>
               <li><a href="#cocktails" className="nav-link text-lg font-mexican">Cócteles</a></li>
+              <li><a href="#our-story" className="nav-link text-lg font-mexican">Nuestra Historia</a></li>
               <li><a href="#contact" className="nav-link text-lg font-mexican">Contacto</a></li>
             </ul>
           </nav>
@@ -71,15 +71,6 @@ const Header: React.FC = () => {
             <ul className="flex flex-col gap-6 text-center">
               <li>
                 <a 
-                  href="#our-story" 
-                  className="text-2xl nav-link inline-block font-mexican"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Nuestra Historia
-                </a>
-              </li>
-              <li>
-                <a 
                   href="#products" 
                   className="text-2xl nav-link inline-block font-mexican"
                   onClick={() => setMobileMenuOpen(false)}
@@ -94,6 +85,15 @@ const Header: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Cócteles
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#our-story" 
+                  className="text-2xl nav-link inline-block font-mexican"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Nuestra Historia
                 </a>
               </li>
               <li>

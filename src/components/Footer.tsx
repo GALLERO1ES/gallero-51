@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xl font-bold text-white mb-4 font-kritik">GALLERO</h4>
             <p className="text-gray-400 mb-4 font-mexican">
-              Experimenta el arte del tequila premium, elaborado a la perfección.
+              Experimenta el arte del tequila, elaborado a la perfección. Un producto que cuando lo pruebes no querrás beber otra cosa.
             </p>
             <p className="text-gray-400 text-sm font-mexican">
               Bebe con responsabilidad.
@@ -23,9 +23,9 @@ const Footer: React.FC = () => {
             <h5 className="text-lg font-semibold text-white mb-4 font-kritik">Enlaces</h5>
             <ul className="space-y-2 font-mexican">
               <li><a href="#home" className="text-gray-400 hover:text-golden transition-colors">Inicio</a></li>
-              <li><a href="#our-story" className="text-gray-400 hover:text-golden transition-colors">Nuestra Historia</a></li>
               <li><a href="#products" className="text-gray-400 hover:text-golden transition-colors">Productos</a></li>
               <li><a href="#cocktails" className="text-gray-400 hover:text-golden transition-colors">Cócteles</a></li>
+              <li><a href="#our-story" className="text-gray-400 hover:text-golden transition-colors">Nuestra Historia</a></li>
               <li><a href="#contact" className="text-gray-400 hover:text-golden transition-colors">Contacto</a></li>
             </ul>
           </div>
