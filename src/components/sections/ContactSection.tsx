@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
+import { Instagram } from "lucide-react";
 
 const ContactSection: React.FC = () => {
+  const contactEmail = "info@gallerotequila.com";
+  
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     toast.success("¡Gracias por tu mensaje! Nos pondremos en contacto pronto.");
@@ -27,19 +30,9 @@ const ContactSection: React.FC = () => {
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-2">Visítanos</h3>
-                <p className="text-gray-300">
-                  Destilería y Sala de Degustación<br />
-                  Calle Principal 123<br />
-                  Tequila, Jalisco<br />
-                  México
-                </p>
-              </div>
-              
-              <div>
                 <h3 className="text-xl font-semibold mb-2">Información de Contacto</h3>
                 <p className="text-gray-300 mb-1">
-                  <strong>Correo:</strong> info@gallerotequila.com
+                  <strong>Correo:</strong> {contactEmail}
                 </p>
                 <p className="text-gray-300 mb-1">
                   <strong>Teléfono:</strong> +52 123 456 7890
@@ -52,17 +45,9 @@ const ContactSection: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Síguenos</h3>
                 <div className="flex gap-4">
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/30 transition-colors">
-                    <span className="sr-only">Facebook</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/30 transition-colors">
+                  <a href="https://www.instagram.com/gallero_es/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/30 transition-colors">
                     <span className="sr-only">Instagram</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/30 transition-colors">
-                    <span className="sr-only">Twitter</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    <Instagram className="text-white" size={20} />
                   </a>
                 </div>
               </div>
@@ -96,6 +81,7 @@ const ContactSection: React.FC = () => {
                         type="email"
                         placeholder="Tu correo"
                         className="bg-white/5 border-white/10 text-white focus:border-primary"
+                        defaultValue={contactEmail}
                         required
                       />
                     </div>
