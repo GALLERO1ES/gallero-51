@@ -1,5 +1,7 @@
+
 /* Import fonts first */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -74,11 +76,11 @@
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-primary text-primary-foreground rounded hover:bg-secondary transition-all duration-300 hover:shadow-[0_0_15px_rgba(var(--primary),0.6)] font-medium;
+    @apply px-6 py-3 bg-primary text-primary-foreground rounded hover:bg-secondary transition-all duration-300 hover:shadow-[0_0_25px_rgba(var(--primary),0.8)] font-medium;
   }
 
   .btn-outline {
-    @apply px-6 py-3 border-2 border-primary text-white rounded hover:bg-primary/20 transition-all duration-300 hover:shadow-[0_0_15px_rgba(var(--primary),0.4)] font-medium;
+    @apply px-6 py-3 border-2 border-primary text-white rounded hover:bg-primary/20 transition-all duration-300 hover:shadow-[0_0_25px_rgba(var(--primary),0.6)] font-medium;
   }
   
   .container-fluid {
@@ -90,7 +92,7 @@
   }
   
   .glass-card {
-    @apply bg-black/40 backdrop-blur-md border border-white/10 rounded-lg shadow-xl;
+    @apply bg-black/40 backdrop-blur-md border border-white/10 rounded-lg shadow-xl hover:shadow-primary/20 transition-all duration-300;
   }
 
   .section-heading {
@@ -98,7 +100,7 @@
   }
 
   .golden-border {
-    @apply border border-primary/50 rounded-lg p-6 transition-all duration-300 hover:border-primary hover:shadow-[0_0_20px_rgba(var(--primary),0.2)];
+    @apply border border-primary/50 rounded-lg p-6 transition-all duration-300 hover:border-primary hover:shadow-[0_0_25px_rgba(var(--primary),0.4)];
   }
   
   .product-highlight {
@@ -112,6 +114,22 @@
   .rooster-animation {
     @apply relative transition-all;
     animation: flap 2s infinite alternate;
+  }
+  
+  /* Nuevas clases para efectos */
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.7), 0 0 20px rgba(255, 193, 7, 0.5);
+  }
+  
+  .hover-float {
+    @apply transition-transform duration-300;
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+  
+  .particle {
+    animation: float 15s infinite ease-in-out;
   }
 }
 
@@ -147,6 +165,34 @@
   .shadow-gold {
     box-shadow: 0 0 15px rgba(var(--primary), 0.5);
   }
+  
+  .animate-float {
+    animation: float 10s infinite ease-in-out;
+  }
+  
+  .animate-float-slow {
+    animation: float 15s infinite ease-in-out;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulseSlow 4s infinite ease-in-out;
+  }
+  
+  .animate-twinkle {
+    animation: twinkle 3s infinite ease-in-out;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounceSlow 2s infinite;
+  }
+  
+  .animate-expand-line {
+    animation: expandLine 1.5s forwards ease-in-out;
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
 }
 
 @keyframes fadeIn {
@@ -174,3 +220,31 @@
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
+
+/* Nuevas animaciones */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.98); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes expandLine {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* Agregamos font-playfair a tailwind.config.ts */

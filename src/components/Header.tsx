@@ -19,6 +19,13 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
@@ -26,16 +33,21 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container-fluid flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+        <div 
+          onClick={scrollToTop}
+          className="cursor-pointer transform transition-all duration-300 hover:scale-110"
+        >
           <h1 className="text-2xl md:text-3xl font-bold font-playfair text-white">
-            <span className="text-gradient">Gallero</span>
+            <span className="text-gradient relative hover:animate-pulse">
+              Gallero
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+            </span>
           </h1>
-        </Link>
+        </div>
 
         {!isMobile ? (
           <nav>
             <ul className="flex items-center gap-8">
-              <li><a href="#home" className="nav-link text-lg">Inicio</a></li>
               <li><a href="#our-story" className="nav-link text-lg">Nuestra Historia</a></li>
               <li><a href="#products" className="nav-link text-lg">Productos</a></li>
               <li><a href="#cocktails" className="nav-link text-lg">Cócteles</a></li>
@@ -59,15 +71,6 @@ const Header: React.FC = () => {
         <div className="fixed inset-0 top-16 bg-black/95 backdrop-blur-md z-30 animate-fade-in">
           <nav className="container-fluid py-10">
             <ul className="flex flex-col gap-6 text-center">
-              <li>
-                <a 
-                  href="#home" 
-                  className="text-2xl nav-link inline-block"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Inicio
-                </a>
-              </li>
               <li>
                 <a 
                   href="#our-story" 
