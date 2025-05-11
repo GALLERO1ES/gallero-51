@@ -27,13 +27,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center">
-      {/* Imagen de fondo */}
+      {/* Imagen de fondo con overlay más sutil */}
       <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="hero-overlay bg-black/80 z-10"></div>
+        <div className="bg-black/70 absolute inset-0 z-10"></div>
         <img 
           src="/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png" 
           alt="Fondo Gallero" 
-          className="absolute w-full h-full object-cover opacity-20"
+          className="absolute w-full h-full object-cover opacity-10"
         />
         
         {/* Video de fondo (solo si la edad está verificada) */}
@@ -43,7 +43,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
             muted 
             loop 
             playsInline
-            className="absolute w-full h-full object-cover mix-blend-overlay opacity-40"
+            className="absolute w-full h-full object-cover mix-blend-overlay opacity-30"
           >
             <source src="https://cdn.coverr.co/videos/coverr-pouring-tequila-into-shot-glass-1589/1080p.mp4" type="video/mp4" />
             Tu navegador no soporta el tag de video.
@@ -51,17 +51,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
         )}
       </div>
       
-      {/* Contenido principal */}
-      <div className="container relative z-20 text-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-          <div className="backdrop-blur-sm py-12 px-6 rounded-lg bg-black/30 border border-primary/20">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up">
+      {/* Contenido principal - Diseño más minimalista */}
+      <div className="container relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-16">
+          <div className="text-center md:text-left">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 animate-slide-up">
               <span className="text-gradient">GALLERO</span>
             </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl mb-8 text-white animate-slide-up animate-stagger-1 font-light">
-              Experimenta el sabor extraordinario del tequila premium crema de fresa
+            <p className="text-xl md:text-2xl lg:text-3xl mb-10 text-white/90 animate-slide-up animate-stagger-1 font-light max-w-lg">
+              Tequila premium crema de fresa
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animate-stagger-2">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start animate-slide-up animate-stagger-2">
               <Button className="btn-primary text-lg" size="lg" onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}>
                 Explorar Productos
               </Button>
@@ -71,15 +71,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
             </div>
           </div>
           
-          {/* Producto destacado - estilo similar a la imagen de referencia */}
-          <div className="hidden md:block relative">
+          {/* Producto destacado - Botella más grande */}
+          <div className="hidden md:flex justify-center items-center mt-12 md:mt-0">
             <div className="relative z-30 product-highlight">
               <img 
                 src="/lovable-uploads/ba893a4e-3791-4be0-af81-5c616df8bb89.png" 
                 alt="Gallero Tequila" 
-                className="h-[500px] object-contain mx-auto"
+                className="h-[600px] object-contain mx-auto transform hover:scale-105 transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary/20 rounded-full -z-10 blur-xl opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary/10 rounded-full -z-10 blur-2xl opacity-70"></div>
             </div>
           </div>
         </div>
