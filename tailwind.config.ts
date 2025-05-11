@@ -25,6 +25,7 @@ export default {
         playfair: ['Playfair Display', 'serif'],
         kritik: ['Kritik-trial', 'sans-serif'],
         times: ['Times New Roman', 'serif'],
+        mexican: ['Permanent Marker', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
