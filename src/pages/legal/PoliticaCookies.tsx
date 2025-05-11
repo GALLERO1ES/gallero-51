@@ -43,10 +43,10 @@ const PoliticaCookies: React.FC = () => {
                 Puedes deshabilitar las cookies en la configuración de tu navegador. A continuación, te indicamos cómo hacerlo en los navegadores más comunes:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Chrome:</strong> Configuración > Privacidad y seguridad > Cookies y otros datos del sitio</li>
-                <li><strong>Firefox:</strong> Menú > Opciones > Privacidad & Seguridad > Cookies y datos del sitio</li>
-                <li><strong>Safari:</strong> Preferencias > Privacidad > Cookies y datos del sitio web</li>
-                <li><strong>Edge:</strong> Configuración > Privacidad, búsqueda y servicios > Cookies</li>
+                <li><strong>Chrome:</strong> Configuración {'>'} Privacidad y seguridad {'>'} Cookies y otros datos del sitio</li>
+                <li><strong>Firefox:</strong> Menú {'>'} Opciones {'>'} Privacidad & Seguridad {'>'} Cookies y datos del sitio</li>
+                <li><strong>Safari:</strong> Preferencias {'>'} Privacidad {'>'} Cookies y datos del sitio web</li>
+                <li><strong>Edge:</strong> Configuración {'>'} Privacidad, búsqueda y servicios {'>'} Cookies</li>
               </ul>
               
               <h2 className="text-2xl font-bold text-golden mt-8">5. ACTUALIZACIONES A ESTA POLÍTICA</h2>
