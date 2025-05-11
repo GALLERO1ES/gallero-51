@@ -32,6 +32,15 @@ const Header: React.FC = () => {
           </h1>
         </Link>
 
+        {/* Imagen de botella en la esquina derecha */}
+        <div className="absolute right-20 top-0 h-16 md:h-20 lg:h-24 z-10 hidden md:block">
+          <img 
+            src="/lovable-uploads/fe0f1674-8bbb-493a-bab5-127d0630c71c.png" 
+            alt="Botella Gallero" 
+            className="h-full object-contain"
+          />
+        </div>
+
         {!isMobile ? (
           <nav>
             <ul className="flex items-center gap-8">
