@@ -1,7 +1,7 @@
-
 /* Import fonts first */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 /* Add Kritik-trial font */
 @font-face {
@@ -58,7 +58,7 @@
   }
   
   body {
-    @apply bg-background text-foreground font-times antialiased;
+    @apply bg-background text-foreground font-mexican antialiased;
     background-image: url('/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png');
     background-size: cover;
     background-position: center;
@@ -79,9 +79,7 @@
   }
   
   .nav-link {
-    @apply relative text-white hover:text-golden transition-colors duration-300 
-           after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-golden
-           after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative text-white hover:text-golden transition-colors duration-300;
   }
 
   .btn-primary {
@@ -226,7 +224,6 @@
   100% { background-position: 200% center; }
 }
 
-/* Nuevas animaciones */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }

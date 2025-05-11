@@ -7,7 +7,7 @@ import { toast } from "@/components/ui/sonner";
 import { Instagram } from "lucide-react";
 
 const ContactSection: React.FC = () => {
-  const contactEmail = "info@gallerotequila.com";
+  const contactEmail = "contacto@gallero.es";
   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const ContactSection: React.FC = () => {
               <span className="text-gradient">Contáctanos</span>
             </h2>
             <p className="text-lg text-gray-300 mb-8">
-              ¿Tienes preguntas sobre nuestros productos o estás interesado en tener Tequila Gallero en tu establecimiento? Nos encantaría saber de ti.
+              ¿Tienes preguntas sobre nuestros productos o estás interesado en tener GALLERO en tu establecimiento? Nos encantaría saber de ti.
             </p>
             
             <div className="space-y-6">

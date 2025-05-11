@@ -10,18 +10,18 @@ const Footer: React.FC = () => {
       <div className="container-fluid">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h4 className="text-xl font-bold text-white mb-4 font-kritik">Gallero Tequila</h4>
-            <p className="text-gray-400 mb-4 font-times">
+            <h4 className="text-xl font-bold text-white mb-4 font-kritik">GALLERO</h4>
+            <p className="text-gray-400 mb-4 font-mexican">
               Experimenta el arte del tequila premium, elaborado a la perfección.
             </p>
-            <p className="text-gray-400 text-sm font-times">
+            <p className="text-gray-400 text-sm font-mexican">
               Bebe con responsabilidad.
             </p>
           </div>
           
           <div>
             <h5 className="text-lg font-semibold text-white mb-4 font-kritik">Enlaces</h5>
-            <ul className="space-y-2 font-times">
+            <ul className="space-y-2 font-mexican">
               <li><a href="#home" className="text-gray-400 hover:text-golden transition-colors">Inicio</a></li>
               <li><a href="#our-story" className="text-gray-400 hover:text-golden transition-colors">Nuestra Historia</a></li>
               <li><a href="#products" className="text-gray-400 hover:text-golden transition-colors">Productos</a></li>
@@ -32,10 +32,11 @@ const Footer: React.FC = () => {
           
           <div>
             <h5 className="text-lg font-semibold text-white mb-4 font-kritik">Legal</h5>
-            <ul className="space-y-2 font-times">
-              <li><a href="#" className="text-gray-400 hover:text-golden transition-colors">Política de Privacidad</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-golden transition-colors">Términos de Servicio</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-golden transition-colors">Política de Cookies</a></li>
+            <ul className="space-y-2 font-mexican">
+              <li><a href="/politica-privacidad" className="text-gray-400 hover:text-golden transition-colors">Política de Privacidad</a></li>
+              <li><a href="/terminos-servicio" className="text-gray-400 hover:text-golden transition-colors">Términos de Servicio</a></li>
+              <li><a href="/politica-cookies" className="text-gray-400 hover:text-golden transition-colors">Política de Cookies</a></li>
+              <li><a href="/aviso-legal" className="text-gray-400 hover:text-golden transition-colors">Aviso Legal</a></li>
             </ul>
           </div>
         </div>
@@ -47,8 +48,8 @@ const Footer: React.FC = () => {
           </a>
         </div>
         
-        <div className="border-t border-white/10 mt-12 pt-6 text-center text-gray-400 text-sm font-times">
-          <p>&copy; {currentYear} Gallero Tequila. Todos los derechos reservados.</p>
+        <div className="border-t border-white/10 mt-12 pt-6 text-center text-gray-400 text-sm font-mexican">
+          <p>&copy; {currentYear} GALLERO. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

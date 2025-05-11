@@ -37,8 +37,8 @@ const Header: React.FC = () => {
           className="cursor-pointer transform transition-all duration-300 hover:scale-110"
         >
           <h1 className="text-2xl md:text-3xl font-bold font-kritik text-white">
-            <span className="text-golden relative hover:animate-pulse">
-              Gallero
+            <span className="text-golden">
+              GALLERO
             </span>
           </h1>
         </div>
@@ -46,10 +46,10 @@ const Header: React.FC = () => {
         {!isMobile ? (
           <nav>
             <ul className="flex items-center gap-8">
-              <li><a href="#our-story" className="nav-link text-lg font-times">Nuestra Historia</a></li>
-              <li><a href="#products" className="nav-link text-lg font-times">Productos</a></li>
-              <li><a href="#cocktails" className="nav-link text-lg font-times">Cócteles</a></li>
-              <li><a href="#contact" className="nav-link text-lg font-times">Contacto</a></li>
+              <li><a href="#our-story" className="nav-link text-lg font-mexican">Nuestra Historia</a></li>
+              <li><a href="#products" className="nav-link text-lg font-mexican">Productos</a></li>
+              <li><a href="#cocktails" className="nav-link text-lg font-mexican">Cócteles</a></li>
+              <li><a href="#contact" className="nav-link text-lg font-mexican">Contacto</a></li>
             </ul>
           </nav>
         ) : (
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
               <li>
                 <a 
                   href="#our-story" 
-                  className="text-2xl nav-link inline-block font-times"
+                  className="text-2xl nav-link inline-block font-mexican"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Nuestra Historia
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
               <li>
                 <a 
                   href="#products" 
-                  className="text-2xl nav-link inline-block font-times"
+                  className="text-2xl nav-link inline-block font-mexican"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Productos
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
               <li>
                 <a 
                   href="#cocktails" 
-                  className="text-2xl nav-link inline-block font-times"
+                  className="text-2xl nav-link inline-block font-mexican"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Cócteles
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
               <li>
                 <a 
                   href="#contact" 
-                  className="text-2xl nav-link inline-block font-times"
+                  className="text-2xl nav-link inline-block font-mexican"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Contacto

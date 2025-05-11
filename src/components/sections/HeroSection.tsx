@@ -84,8 +84,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
                 GALLERO
               </span>
             </h1>
-            <p className={`text-xl md:text-2xl lg:text-3xl mb-10 text-white/90 font-times max-w-lg transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              Tequila premium crema de fresa
+            <p className={`text-xl md:text-2xl lg:text-3xl mb-10 text-white/90 font-mexican max-w-lg transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+              No es gallo si no canta, no es fiesta si no hay Gallero🐔
             </p>
             <div className={`flex flex-col sm:flex-row gap-6 justify-center md:justify-start transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
               <Button 
@@ -110,9 +110,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
           <div className="hidden md:flex justify-center items-center mt-12 md:mt-0">
             <div className={`relative z-30 product-highlight transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
               <img 
-                src="/lovable-uploads/ba893a4e-3791-4be0-af81-5c616df8bb89.png" 
+                src="/lovable-uploads/c76ace31-f44d-40ee-9558-70741d4fc3d4.png" 
                 alt="Gallero Tequila" 
-                className="h-[600px] object-contain mx-auto transform hover:scale-105 transition-all duration-500 animate-float-slow"
+                className="h-[700px] object-contain mx-auto transform hover:scale-105 transition-all duration-500 animate-float-slow"
               />
               <div className="absolute inset-0 bg-golden/20 rounded-full -z-10 blur-3xl opacity-70 animate-pulse"></div>
               
