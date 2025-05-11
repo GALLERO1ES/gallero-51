@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -38,9 +37,8 @@ const Header: React.FC = () => {
           className="cursor-pointer transform transition-all duration-300 hover:scale-110"
         >
           <h1 className="text-2xl md:text-3xl font-bold font-kritik text-white">
-            <span className="text-gradient relative hover:animate-pulse">
+            <span className="text-golden relative hover:animate-pulse">
               Gallero
-              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-golden transition-all group-hover:w-full"></span>
             </span>
           </h1>
         </div>
@@ -48,10 +46,10 @@ const Header: React.FC = () => {
         {!isMobile ? (
           <nav>
             <ul className="flex items-center gap-8">
-              <li><a href="#our-story" className="nav-link text-lg">Nuestra Historia</a></li>
-              <li><a href="#products" className="nav-link text-lg">Productos</a></li>
-              <li><a href="#cocktails" className="nav-link text-lg">Cócteles</a></li>
-              <li><a href="#contact" className="nav-link text-lg">Contacto</a></li>
+              <li><a href="#our-story" className="nav-link text-lg font-times">Nuestra Historia</a></li>
+              <li><a href="#products" className="nav-link text-lg font-times">Productos</a></li>
+              <li><a href="#cocktails" className="nav-link text-lg font-times">Cócteles</a></li>
+              <li><a href="#contact" className="nav-link text-lg font-times">Contacto</a></li>
             </ul>
           </nav>
         ) : (
@@ -74,7 +72,7 @@ const Header: React.FC = () => {
               <li>
                 <a 
                   href="#our-story" 
-                  className="text-2xl nav-link inline-block"
+                  className="text-2xl nav-link inline-block font-times"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Nuestra Historia
@@ -83,7 +81,7 @@ const Header: React.FC = () => {
               <li>
                 <a 
                   href="#products" 
-                  className="text-2xl nav-link inline-block"
+                  className="text-2xl nav-link inline-block font-times"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Productos
@@ -92,7 +90,7 @@ const Header: React.FC = () => {
               <li>
                 <a 
                   href="#cocktails" 
-                  className="text-2xl nav-link inline-block"
+                  className="text-2xl nav-link inline-block font-times"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Cócteles
@@ -101,7 +99,7 @@ const Header: React.FC = () => {
               <li>
                 <a 
                   href="#contact" 
-                  className="text-2xl nav-link inline-block"
+                  className="text-2xl nav-link inline-block font-times"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Contacto

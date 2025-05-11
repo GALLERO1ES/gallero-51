@@ -80,12 +80,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-16">
           <div className="text-center md:text-left">
             <h1 className={`text-6xl md:text-7xl lg:text-8xl font-bold mb-8 transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              <span className="text-gradient relative inline-block">
+              <span className="text-white font-kritik relative inline-block">
                 GALLERO
-                <div className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary transition-all duration-1000 animate-expand-line"></div>
               </span>
             </h1>
-            <p className={`text-xl md:text-2xl lg:text-3xl mb-10 text-white/90 font-light max-w-lg transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+            <p className={`text-xl md:text-2xl lg:text-3xl mb-10 text-white/90 font-times max-w-lg transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
               Tequila premium crema de fresa
             </p>
             <div className={`flex flex-col sm:flex-row gap-6 justify-center md:justify-start transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
@@ -115,13 +114,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
                 alt="Gallero Tequila" 
                 className="h-[600px] object-contain mx-auto transform hover:scale-105 transition-all duration-500 animate-float-slow"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary/20 rounded-full -z-10 blur-3xl opacity-70 animate-pulse"></div>
+              <div className="absolute inset-0 bg-golden/20 rounded-full -z-10 blur-3xl opacity-70 animate-pulse"></div>
               
               {/* Destellos alrededor de la botella */}
               {[...Array(5)].map((_, index) => (
                 <div 
                   key={index}
-                  className="absolute w-3 h-3 bg-primary/80 rounded-full blur-sm animate-twinkle"
+                  className="absolute w-3 h-3 bg-golden/80 rounded-full blur-sm animate-twinkle"
                   style={{
                     top: `${Math.random() * 80 + 10}%`,
                     left: `${Math.random() * 80 + 10}%`,
