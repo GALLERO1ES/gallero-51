@@ -1,19 +1,13 @@
-
 import React from "react";
 import { Instagram } from "lucide-react";
-
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-black py-12">
+  return <footer className="bg-black py-12">
       <div className="container-fluid">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h4 className="text-xl font-bold text-white mb-4 font-kritik">GALLERO</h4>
-            <p className="text-gray-400 mb-4 font-mexican">
-              Experimenta el arte del tequila, elaborado a la perfección. Un producto que cuando lo pruebes no querrás beber otra cosa.
-            </p>
+            <p className="text-gray-400 mb-4 font-mexican">Elaborado a la perfección. Un producto que cuando lo pruebes no querrás beber otra cosa.</p>
             <p className="text-gray-400 text-sm font-mexican">
               Bebe con responsabilidad.
             </p>
@@ -52,8 +46,6 @@ const Footer: React.FC = () => {
           <p>&copy; {currentYear} GALLERO. Todos los derechos reservados.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
