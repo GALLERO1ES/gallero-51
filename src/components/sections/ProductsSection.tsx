@@ -14,22 +14,22 @@ const ProductsSection: React.FC = () => {
   const products: Product[] = [
     {
       id: 1,
-      name: "Strawberry Cream Tequila",
-      description: "Our signature blend, combining premium tequila with the sweet essence of strawberry cream for a uniquely smooth experience.",
-      image: "/lovable-uploads/d9d23a60-7325-4c90-a8db-84bb4b7e3da9.png",
+      name: "Tequila Crema de Fresa",
+      description: "Nuestra mezcla insignia, combinando tequila premium con la dulce esencia de crema de fresa para una experiencia excepcionalmente suave.",
+      image: "/lovable-uploads/dcc56214-4a30-442f-b741-07f29b5d7239.png",
       color: "from-pink-500/20 to-red-500/20"
     },
     {
       id: 2,
-      name: "Blanco Silver",
-      description: "Unaged and pure, our Blanco offers crisp, bright flavors with the perfect balance of agave sweetness and subtle herbal notes.",
+      name: "Blanco Plata",
+      description: "Sin envejecer y puro, nuestro Blanco ofrece sabores nítidos y brillantes con el equilibrio perfecto entre la dulzura del agave y notas herbales sutiles.",
       image: "https://images.unsplash.com/photo-1662870514290-192ed2b2959f?q=80&w=1974&auto=format&fit=crop",
       color: "from-blue-500/20 to-cyan-500/20"
     },
     {
       id: 3,
-      name: "Reposado Gold",
-      description: "Aged for 8 months in oak barrels, delivering a smooth character with notes of vanilla, caramel and subtle spice.",
+      name: "Reposado Oro",
+      description: "Envejecido durante 8 meses en barricas de roble, que proporciona un carácter suave con notas de vainilla, caramelo y sutiles especias.",
       image: "https://images.unsplash.com/photo-1550985543-f1ea83b166d5?q=80&w=1974&auto=format&fit=crop",
       color: "from-amber-500/20 to-yellow-500/20"
     }
@@ -40,10 +40,10 @@ const ProductsSection: React.FC = () => {
       <div className="container-fluid">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="text-gradient">Our Products</span>
+            <span className="text-gradient">Nuestros Productos</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Discover our range of premium tequilas, each crafted with passion and precision to deliver an exceptional drinking experience.
+            Descubre nuestra gama de tequilas premium, cada uno elaborado con pasión y precisión para ofrecer una experiencia de bebida excepcional.
           </p>
         </div>
         
@@ -61,7 +61,7 @@ const ProductsSection: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">{product.name}</h3>
                 <p className="text-gray-300 mb-6">{product.description}</p>
-                <Button className="btn-primary w-full">Learn More</Button>
+                <Button className="btn-primary w-full">Saber Más</Button>
               </div>
             </div>
           ))}

@@ -22,14 +22,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
             className="absolute w-full h-full object-cover"
           >
             <source src="https://cdn.coverr.co/videos/coverr-pouring-tequila-into-shot-glass-1589/1080p.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+            Tu navegador no soporta el tag de video.
           </video>
         )}
         {/* Fallback image for when video can't play or age verification isn't complete */}
         {!ageVerified && (
           <img 
-            src="https://images.unsplash.com/photo-1609951651973-03b4c838b0d2?q=80&w=1974&auto=format&fit=crop" 
-            alt="Tequila background" 
+            src="/lovable-uploads/dcc56214-4a30-442f-b741-07f29b5d7239.png" 
+            alt="Fondo de Tequila" 
             className="absolute w-full h-full object-cover"
           />
         )}
@@ -41,14 +41,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
             <span className="text-gradient">GALLERO</span> <span className="font-light">TEQUILA</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 animate-slide-up animate-stagger-1">
-            Experience the extraordinary taste of premium strawberry cream tequila
+            Experimenta el sabor extraordinario del tequila premium crema de fresa
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animate-stagger-2">
-            <Button className="btn-primary" size="lg">
-              Explore Our Products
+            <Button className="btn-primary" size="lg" onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}>
+              Explorar Nuestros Productos
             </Button>
-            <Button variant="outline" className="btn-outline" size="lg">
-              Our Story
+            <Button variant="outline" className="btn-outline" size="lg" onClick={() => document.getElementById('our-story')?.scrollIntoView({ behavior: 'smooth' })}>
+              Nuestra Historia
             </Button>
           </div>
         </div>

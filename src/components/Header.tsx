@@ -35,11 +35,11 @@ const Header: React.FC = () => {
         {!isMobile ? (
           <nav>
             <ul className="flex items-center gap-8">
-              <li><a href="#home" className="nav-link">Home</a></li>
-              <li><a href="#our-story" className="nav-link">Our Story</a></li>
-              <li><a href="#products" className="nav-link">Products</a></li>
-              <li><a href="#cocktails" className="nav-link">Cocktails</a></li>
-              <li><a href="#contact" className="nav-link">Contact</a></li>
+              <li><a href="#home" className="nav-link">Inicio</a></li>
+              <li><a href="#our-story" className="nav-link">Nuestra Historia</a></li>
+              <li><a href="#products" className="nav-link">Productos</a></li>
+              <li><a href="#cocktails" className="nav-link">Cócteles</a></li>
+              <li><a href="#contact" className="nav-link">Contacto</a></li>
             </ul>
           </nav>
         ) : (
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
                   className="text-xl nav-link inline-block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Home
+                  Inicio
                 </a>
               </li>
               <li>
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
                   className="text-xl nav-link inline-block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Our Story
+                  Nuestra Historia
                 </a>
               </li>
               <li>
@@ -83,7 +83,7 @@ const Header: React.FC = () => {
                   className="text-xl nav-link inline-block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Products
+                  Productos
                 </a>
               </li>
               <li>
@@ -92,7 +92,7 @@ const Header: React.FC = () => {
                   className="text-xl nav-link inline-block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Cocktails
+                  Cócteles
                 </a>
               </li>
               <li>
@@ -101,7 +101,7 @@ const Header: React.FC = () => {
                   className="text-xl nav-link inline-block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Contact
+                  Contacto
                 </a>
               </li>
             </ul>

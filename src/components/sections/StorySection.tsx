@@ -8,16 +8,16 @@ const StorySection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="text-gradient">Our Story</span>
+              <span className="text-gradient">Nuestra Historia</span>
             </h2>
             <p className="text-lg text-gray-300 mb-4">
-              Founded in the heart of Jalisco, Mexico, Gallero Tequila emerged from a passion for tradition and innovation. Our journey began with a simple vision: to create a tequila that honors the rich heritage of Mexico while embracing bold new flavors.
+              Fundado en el corazón de Jalisco, México, Gallero Tequila surgió de una pasión por la tradición y la innovación. Nuestro viaje comenzó con una visión simple: crear un tequila que honrara la rica herencia de México mientras abrazaba nuevos y audaces sabores.
             </p>
             <p className="text-lg text-gray-300 mb-4">
-              Our master distillers handcraft each batch using time-honored techniques passed down through generations, combined with a creative approach that gives Gallero its distinctive character.
+              Nuestros maestros destiladores elaboran artesanalmente cada lote utilizando técnicas tradicionales transmitidas a lo largo de generaciones, combinadas con un enfoque creativo que le da a Gallero su carácter distintivo.
             </p>
             <p className="text-lg text-gray-300">
-              The result is our signature Strawberry Cream Tequila – a perfect balance of premium blue agave tequila and the sweet essence of fresh strawberries, creating an unparalleled drinking experience that captures the spirit of celebration.
+              El resultado es nuestro Tequila Crema de Fresa – un equilibrio perfecto entre tequila premium de agave azul y la dulce esencia de fresas frescas, creando una experiencia de bebida sin igual que captura el espíritu de la celebración.
             </p>
           </div>
           
@@ -25,8 +25,8 @@ const StorySection: React.FC = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-2xl blur-xl opacity-70"></div>
               <img 
-                src="/lovable-uploads/d9d23a60-7325-4c90-a8db-84bb4b7e3da9.png" 
-                alt="Gallero Tequila Bottle" 
+                src="/lovable-uploads/f8d7ba3e-69c9-4c42-99dc-ffad8567bd9b.png" 
+                alt="Botellas de Gallero Tequila" 
                 className="relative rounded-lg object-contain w-full max-h-[500px] mx-auto"
               />
             </div>

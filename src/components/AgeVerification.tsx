@@ -23,11 +23,11 @@ const AgeVerification: React.FC<AgeVerificationProps> = ({ onVerify }) => {
     localStorage.setItem("age-verified", "true");
     setIsVisible(false);
     onVerify();
-    toast.success("Age verified successfully");
+    toast.success("Edad verificada correctamente");
   };
 
   const handleDeny = () => {
-    toast.error("You must be of legal drinking age to visit this site");
+    toast.error("Debes tener la edad legal para consumir alcohol para visitar este sitio");
   };
 
   if (!isVisible) return null;
@@ -37,30 +37,30 @@ const AgeVerification: React.FC<AgeVerificationProps> = ({ onVerify }) => {
       <div className="glass-card p-8 max-w-md w-full animate-appear">
         <div className="flex justify-center mb-6">
           <img 
-            src="/lovable-uploads/d9d23a60-7325-4c90-a8db-84bb4b7e3da9.png" 
+            src="/lovable-uploads/dcc56214-4a30-442f-b741-07f29b5d7239.png" 
             alt="Gallero Tequila" 
             className="h-32 object-contain"
           />
         </div>
         <h2 className="text-2xl md:text-3xl font-playfair text-center mb-6">
-          Welcome to <span className="text-gradient font-bold">Gallero</span>
+          Bienvenido a <span className="text-gradient font-bold">Gallero</span>
         </h2>
         <p className="text-center mb-8 text-gray-300">
-          Please verify that you are of legal drinking age in your country or region to enter this site.
+          Por favor, verifica que tienes la edad legal para consumir alcohol en tu país o región para acceder a este sitio.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
           <Button 
             onClick={handleVerify} 
             className="btn-primary"
           >
-            I am of legal drinking age
+            Tengo la edad legal para beber
           </Button>
           <Button 
             onClick={handleDeny}
             variant="outline" 
             className="btn-outline"
           >
-            I am not of legal age
+            No tengo la edad legal
           </Button>
         </div>
       </div>
