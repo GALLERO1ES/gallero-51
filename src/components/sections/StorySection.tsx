@@ -11,13 +11,15 @@ const StorySection: React.FC = () => {
               <span className="text-gradient">Nuestra Historia</span>
             </h2>
             <p className="text-lg text-gray-300 mb-4">
-              Fundado en el corazón de Jalisco, México, Gallero Tequila surgió de una pasión por la tradición y la innovación. Nuestro viaje comenzó con una visión simple: crear un tequila que honrara la rica herencia de México mientras abrazaba nuevos y audaces sabores.
+              Gallero nació en el corazón de Madrid, pero su alma viaja directo desde México.
+              Inspirados por la pasión, el sabor y la tradición del tequila auténtico, decidimos crear algo diferente: una crema suave, atrevida y deliciosa, pensada para sorprender.
             </p>
             <p className="text-lg text-gray-300 mb-4">
-              Nuestros maestros destiladores elaboran artesanalmente cada lote utilizando técnicas tradicionales transmitidas a lo largo de generaciones, combinadas con un enfoque creativo que le da a Gallero su carácter distintivo.
+              Importamos tequila de origen mexicano —fiel a su esencia y calidad— y lo fusionamos con sabores que conquistan: la dulzura especiada de la horchata y el toque jugoso y vibrante de la fresa. Así nace Gallero, una crema con carácter, creada para quienes se atreven a romper lo clásico y brindar con algo nuevo. 
             </p>
             <p className="text-lg text-gray-300">
-              El resultado es nuestro Tequila Crema de Fresa – un equilibrio perfecto entre tequila premium de agave azul y la dulce esencia de fresas frescas, creando una experiencia de bebida sin igual que captura el espíritu de la celebración.
+              No somos solo una bebida. Somos un puente entre culturas, una mezcla inesperada y perfecta.
+              Gallero es el sabor que no sabías que necesitabas pero que ahora no podrás dejar de llevar contigo!
             </p>
           </div>
           
