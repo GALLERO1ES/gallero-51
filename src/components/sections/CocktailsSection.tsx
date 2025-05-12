@@ -19,7 +19,7 @@ const CocktailsSection: React.FC = () => {
       name: "Gallero Espresso",
       description: "Un martini cremoso con alma de horchata y carácter de café. Ideal como digestivo o para una noche especial.",
       ingredients: [
-        "60 ml de licor de tequila sabor horchata",
+        "60 ml de GALLERO sabor horchata",
         "30 ml de café espresso",
         "15 ml de licor de café (como Kahlúa)",
         "Hielo",
