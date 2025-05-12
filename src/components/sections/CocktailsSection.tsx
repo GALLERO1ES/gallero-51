@@ -10,6 +10,7 @@ interface Cocktail {
   preparation?: string[];
   decoration?: string;
   image: string;
+  tip?: string;
 }
 
 const CocktailsSection: React.FC = () => {
@@ -31,6 +32,27 @@ const CocktailsSection: React.FC = () => {
         "Decora con 2 o 3 granos de café encima."
       ],
       image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1974&auto=format&fit=crop"
+    },
+    {
+      id: 2,
+      name: "🍓 GALLERO Pink",
+      description: "Un twist frutal del clásico margarita, con mucho estilo y sabor a fresa.",
+      ingredients: [
+        "60 ml de Gallero sabor fresa (2 partes)",
+        "30 ml de licor triple seco (1 parte)",
+        "30 ml de zumo de lima natural (1 parte)",
+        "Hielo al gusto",
+        "Sal para el borde del vaso",
+        "Rodaja de lima para decorar"
+      ],
+      preparation: [
+        "Prepara la copa: Pasa una lima por el borde de la copa y rebózalo en sal para darle ese toque clásico tipo margarita.",
+        "Mezcla los ingredientes: En una coctelera, añade Gallero de fresa, el triple seco y el zumo de lima.",
+        "Enfría y agita: Agrega unos cubitos de hielo, cierra la coctelera y agita con energía durante unos segundos.",
+        "Sirve y decora: Cuela la mezcla en la copa preparada y añade una rodaja de lima como toque final."
+      ],
+      tip: "Si quieres una versión más suave, puedes añadir un chorrito de soda o un poco de hielo picado para convertirlo en un frozen.",
+      image: "/lovable-uploads/8b4daa43-894e-486c-88f9-73275c320b6b.png"
     }
   ];
 
@@ -86,6 +108,13 @@ const CocktailsSection: React.FC = () => {
                         <li key={i} className="pl-1">{step}</li>
                       ))}
                     </ol>
+                  </div>
+                )}
+                
+                {cocktail.tip && (
+                  <div className="mt-4">
+                    <h4 className="text-lg font-semibold text-primary mb-2">🌟 Tip:</h4>
+                    <p className="text-gray-300">{cocktail.tip}</p>
                   </div>
                 )}
               </div>

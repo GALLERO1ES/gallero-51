@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
@@ -99,9 +98,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
                 variant="outline" 
                 className="btn-outline text-lg hover:scale-105 transition-transform" 
                 size="lg" 
-                onClick={() => document.getElementById('our-story')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('cocktails')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Nuestra Historia
+                Cócteles
               </Button>
             </div>
           </div>
