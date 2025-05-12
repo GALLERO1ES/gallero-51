@@ -1,8 +1,26 @@
+
 import React from "react";
 import { Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
+
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  return <footer className="bg-black py-12">
+  
+  const scrollToSection = (id: string) => {
+    // Si estamos en la página principal, hacer scroll suave
+    if (window.location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Si estamos en otra página, redirigir a la página principal con el hash
+      window.location.href = `/#${id}`;
+    }
+  };
+
+  return (
+    <footer className="bg-black py-12">
       <div className="container-fluid">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -16,21 +34,21 @@ const Footer: React.FC = () => {
           <div>
             <h5 className="text-lg font-semibold text-white mb-4 font-kritik">Enlaces</h5>
             <ul className="space-y-2 font-mexican">
-              <li><a href="#home" className="text-gray-400 hover:text-golden transition-colors">Inicio</a></li>
-              <li><a href="#products" className="text-gray-400 hover:text-golden transition-colors">Productos</a></li>
-              <li><a href="#cocktails" className="text-gray-400 hover:text-golden transition-colors">Cócteles</a></li>
-              <li><a href="#our-story" className="text-gray-400 hover:text-golden transition-colors">Nuestra Historia</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-golden transition-colors">Contacto</a></li>
+              <li><button onClick={() => scrollToSection('home')} className="text-gray-400 hover:text-golden transition-colors">Inicio</button></li>
+              <li><button onClick={() => scrollToSection('products')} className="text-gray-400 hover:text-golden transition-colors">Productos</button></li>
+              <li><button onClick={() => scrollToSection('cocktails')} className="text-gray-400 hover:text-golden transition-colors">Cócteles</button></li>
+              <li><button onClick={() => scrollToSection('our-story')} className="text-gray-400 hover:text-golden transition-colors">Nuestra Historia</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-golden transition-colors">Contacto</button></li>
             </ul>
           </div>
           
           <div>
             <h5 className="text-lg font-semibold text-white mb-4 font-kritik">Legal</h5>
             <ul className="space-y-2 font-mexican">
-              <li><a href="/politica-privacidad" className="text-gray-400 hover:text-golden transition-colors">Política de Privacidad</a></li>
-              <li><a href="/terminos-servicio" className="text-gray-400 hover:text-golden transition-colors">Términos de Servicio</a></li>
-              <li><a href="/politica-cookies" className="text-gray-400 hover:text-golden transition-colors">Política de Cookies</a></li>
-              <li><a href="/aviso-legal" className="text-gray-400 hover:text-golden transition-colors">Aviso Legal</a></li>
+              <li><Link to="/politica-privacidad" className="text-gray-400 hover:text-golden transition-colors">Política de Privacidad</Link></li>
+              <li><Link to="/terminos-servicio" className="text-gray-400 hover:text-golden transition-colors">Términos de Servicio</Link></li>
+              <li><Link to="/politica-cookies" className="text-gray-400 hover:text-golden transition-colors">Política de Cookies</Link></li>
+              <li><Link to="/aviso-legal" className="text-gray-400 hover:text-golden transition-colors">Aviso Legal</Link></li>
             </ul>
           </div>
         </div>
@@ -46,6 +64,8 @@ const Footer: React.FC = () => {
           <p>&copy; {currentYear} GALLERO. Todos los derechos reservados.</p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

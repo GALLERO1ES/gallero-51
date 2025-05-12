@@ -52,7 +52,7 @@ const CocktailsSection: React.FC = () => {
         "Sirve y decora: Cuela la mezcla en la copa preparada y añade una rodaja de lima como toque final."
       ],
       tip: "Si quieres una versión más suave, puedes añadir un chorrito de soda o un poco de hielo picado para convertirlo en un frozen.",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?q=80&w=1974&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1770&auto=format&fit=crop"
     }
   ];
 
