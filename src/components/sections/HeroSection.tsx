@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
@@ -16,13 +15,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
   });
 
   useEffect(() => {
-    // Marcar cuando los elementos están cargados
+    // Mark when elements are loaded
     setIsLoaded(true);
     
     // Animation cycle for the rooster
     const interval = setInterval(() => {
-      // Generate random position
-      const sides = ['right', 'left', 'top', 'bottom'];
+      // Generate random position - now only left or right sides to apply mirroring
+      const sides = ['right', 'left'];
       const randomSide = sides[Math.floor(Math.random() * sides.length)];
       const randomVertical = Math.floor(Math.random() * 60) + 20; // Between 20% and 80%
       
@@ -75,22 +74,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
           right: 'auto',
           bottom: 'auto'
         };
-      case 'top':
-        return {
-          top: 0,
-          left: `${roosterPosition.vertical}%`,
-          transform: 'translate(-50%, -50%) rotate(-15deg)',
-          right: 'auto',
-          bottom: 'auto'
-        };
-      case 'bottom':
-        return {
-          bottom: 0,
-          left: `${roosterPosition.vertical}%`,
-          transform: 'translate(-50%, 50%) rotate(15deg)',
-          right: 'auto',
-          top: 'auto'
-        };
       default:
         return {};
     }
@@ -122,7 +105,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
       <div className="absolute inset-0 overflow-hidden z-0">
         <div className="bg-black/70 absolute inset-0 z-10"></div>
         <img 
-          src="/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png" 
+          src="/lovable-uploads/ffc4d9c5-bb1f-4ede-a0ce-a902f60f8934.png" 
           alt="Fondo Gallero" 
           className="absolute w-full h-full object-cover opacity-10"
         />
@@ -212,7 +195,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
         <img 
           src="/lovable-uploads/df6b1d3e-a626-4824-940f-c3017edb0a21.png" 
           alt="Gallero Mascot" 
-          className="h-64 object-contain animate-pulse-slow"
+          className={`h-64 object-contain animate-pulse-slow ${roosterPosition.side === 'left' ? 'scale-x-[-1]' : ''}`}
         />
       </div>
     </section>

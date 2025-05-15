@@ -1,4 +1,3 @@
-
 import React from "react";
 import { GlassWater } from "lucide-react";
 
@@ -52,7 +51,7 @@ const CocktailsSection: React.FC = () => {
         "Sirve y decora: Cuela la mezcla en la copa preparada y añade una rodaja de lima como toque final."
       ],
       tip: "Si quieres una versión más suave, puedes añadir un chorrito de soda o un poco de hielo picado para convertirlo en un frozen.",
-      image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1770&auto=format&fit=crop"
+      image: "/lovable-uploads/35d49e6a-65c8-48a7-afd8-f1bf3cf84bc4.png"
     }
   ];
 
