@@ -1,203 +1,40 @@
+
 import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { useRoosterAnimation } from "../hero/useRoosterAnimation";
+import RoosterAnimation from "../hero/RoosterAnimation";
+import ParticlesEffect from "../hero/ParticlesEffect";
+import HeroBackground from "../hero/HeroBackground";
+import HeroContent from "../hero/HeroContent";
 
 interface HeroSectionProps {
   ageVerified: boolean;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
-  const [showRooster, setShowRooster] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [roosterPosition, setRoosterPosition] = useState<{ side: string; vertical: number }>({ 
-    side: 'right', 
-    vertical: 50 
-  });
+  const { showRooster, roosterPosition } = useRoosterAnimation();
 
   useEffect(() => {
     // Mark when elements are loaded
     setIsLoaded(true);
-    
-    // Animation cycle for the rooster
-    const interval = setInterval(() => {
-      // Generate random position - now only left or right sides to apply mirroring
-      const sides = ['right', 'left'];
-      const randomSide = sides[Math.floor(Math.random() * sides.length)];
-      const randomVertical = Math.floor(Math.random() * 60) + 20; // Between 20% and 80%
-      
-      setRoosterPosition({
-        side: randomSide,
-        vertical: randomVertical
-      });
-      
-      setShowRooster(true);
-      
-      const timeout = setTimeout(() => {
-        setShowRooster(false);
-      }, 5000); // Show for 5 seconds
-      
-      return () => clearTimeout(timeout);
-    }, 40000); // Repeat every 40 seconds
-    
-    // Initial appearance after 2 seconds
-    const initialTimeout = setTimeout(() => {
-      setShowRooster(true);
-      
-      const hideTimeout = setTimeout(() => {
-        setShowRooster(false);
-      }, 5000);
-      
-      return () => clearTimeout(hideTimeout);
-    }, 2000);
-    
-    return () => {
-      clearInterval(interval);
-      clearTimeout(initialTimeout);
-    };
   }, []);
-
-  const getRoosterStyle = () => {
-    switch(roosterPosition.side) {
-      case 'right':
-        return {
-          right: 0,
-          top: `${roosterPosition.vertical}%`,
-          transform: 'translate(50%, -50%) rotate(-6deg)',
-          left: 'auto',
-          bottom: 'auto'
-        };
-      case 'left':
-        return {
-          left: 0,
-          top: `${roosterPosition.vertical}%`,
-          transform: 'translate(-50%, -50%) rotate(6deg)',
-          right: 'auto',
-          bottom: 'auto'
-        };
-      default:
-        return {};
-    }
-  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Partículas flotantes para un efecto más dinámico */}
-      <div className="absolute inset-0 z-5">
-        <div className="particles-container">
-          {[...Array(20)].map((_, index) => (
-            <div 
-              key={index} 
-              className={`particle absolute bg-primary/20 rounded-full animate-float`}
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 10 + 5}px`,
-                height: `${Math.random() * 10 + 5}px`,
-                animationDuration: `${Math.random() * 20 + 10}s`,
-                animationDelay: `${Math.random() * 5}s`
-              }}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Particles floating effect */}
+      <ParticlesEffect />
       
-      {/* Imagen de fondo con overlay más dinámico */}
-      <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="bg-black/70 absolute inset-0 z-10"></div>
-        <img 
-          src="/lovable-uploads/ffc4d9c5-bb1f-4ede-a0ce-a902f60f8934.png" 
-          alt="Fondo Gallero" 
-          className="absolute w-full h-full object-cover opacity-10"
-        />
-        
-        {/* Video de fondo con efecto de vibración sutil */}
-        {ageVerified && (
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="absolute w-full h-full object-cover mix-blend-overlay opacity-30 animate-pulse"
-          >
-            <source src="https://cdn.coverr.co/videos/coverr-pouring-tequila-into-shot-glass-1589/1080p.mp4" type="video/mp4" />
-            Tu navegador no soporta el tag de video.
-          </video>
-        )}
-      </div>
+      {/* Background with dynamic overlay */}
+      <HeroBackground ageVerified={ageVerified} />
       
-      {/* Contenido principal con animaciones más impactantes */}
-      <div className="container relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-16">
-          <div className="text-center md:text-left">
-            <h1 className={`text-6xl md:text-7xl lg:text-8xl font-bold mb-8 transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              <span className="text-white font-kritik relative inline-block">
-                GALLERO
-              </span>
-            </h1>
-            <p className={`text-xl md:text-2xl lg:text-3xl mb-10 text-white/90 font-mexican max-w-lg transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              No es gallo si no canta, no es fiesta si no hay Gallero🐔
-            </p>
-            <div className={`flex flex-col sm:flex-row gap-6 justify-center md:justify-start transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              <Button 
-                className="btn-primary text-lg hover:scale-105 transition-transform" 
-                size="lg" 
-                onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Explorar Productos
-              </Button>
-              <Button 
-                variant="outline" 
-                className="btn-outline text-lg hover:scale-105 transition-transform" 
-                size="lg" 
-                onClick={() => document.getElementById('cocktails')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Cócteles
-              </Button>
-            </div>
-          </div>
-          
-          {/* Producto destacado con efectos más llamativos */}
-          <div className="hidden md:flex justify-center items-center mt-12 md:mt-0">
-            <div className={`relative z-30 product-highlight transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
-              <img 
-                src="/lovable-uploads/c76ace31-f44d-40ee-9558-70741d4fc3d4.png" 
-                alt="Gallero Tequila" 
-                className="h-[700px] object-contain mx-auto transform hover:scale-105 transition-all duration-500 animate-float-slow"
-              />
-              <div className="absolute inset-0 bg-golden/20 rounded-full -z-10 blur-3xl opacity-70 animate-pulse"></div>
-              
-              {/* Destellos alrededor de la botella */}
-              {[...Array(5)].map((_, index) => (
-                <div 
-                  key={index}
-                  className="absolute w-3 h-3 bg-golden/80 rounded-full blur-sm animate-twinkle"
-                  style={{
-                    top: `${Math.random() * 80 + 10}%`,
-                    left: `${Math.random() * 80 + 10}%`,
-                    animationDelay: `${Math.random() * 3}s`
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        {/* Scroll down indicator con animación mejorada */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-          <a href="#our-story" className="text-white/80 hover:text-white transition-colors duration-300 hover:scale-125 block">
-            <ChevronDown size={32} />
-          </a>
-        </div>
-      </div>
+      {/* Main content with animations */}
+      <HeroContent isLoaded={isLoaded} />
       
-      {/* Animación del Gallo - Ahora con posiciones aleatorias */}
-      <div className={`fixed z-40 transition-all duration-1000 ease-in-out ${showRooster ? 'opacity-100' : 'opacity-0'}`} style={getRoosterStyle()}>
-        <img 
-          src="/lovable-uploads/df6b1d3e-a626-4824-940f-c3017edb0a21.png" 
-          alt="Gallero Mascot" 
-          className={`h-64 object-contain animate-pulse-slow ${roosterPosition.side === 'left' ? 'scale-x-[-1]' : ''}`}
-        />
-      </div>
+      {/* Rooster animation with random positions */}
+      <RoosterAnimation 
+        showRooster={showRooster} 
+        roosterPosition={roosterPosition} 
+      />
     </section>
   );
 };
