@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,12 +8,38 @@ import { Instagram } from "lucide-react";
 
 const ContactSection: React.FC = () => {
   const contactEmail = "contacto@gallero.es";
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("¡Gracias por tu mensaje! Nos pondremos en contacto pronto.");
-    // Reset form
-    (e.target as HTMLFormElement).reset();
+    setIsSubmitting(true);
+    
+    // Get form data
+    const formData = new FormData(e.target as HTMLFormElement);
+    const name = formData.get('name')?.toString() || '';
+    const email = formData.get('email')?.toString() || '';
+    const subject = formData.get('subject')?.toString() || '';
+    const message = formData.get('message')?.toString() || '';
+    
+    try {
+      // Simple email validation
+      if (!email.includes('@')) {
+        throw new Error("Por favor, introduce un correo electrónico válido.");
+      }
+      
+      // This would typically be an API call to your backend
+      // For now we'll simulate sending the email
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast.success("¡Mensaje enviado correctamente!");
+      // Reset form
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("Ha ocurrido un error al enviar el mensaje. Por favor, inténtalo de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -61,6 +87,7 @@ const ContactSection: React.FC = () => {
                       </label>
                       <Input
                         id="name"
+                        name="name"
                         placeholder="Tu nombre"
                         className="bg-white/5 border-white/10 text-white focus:border-golden"
                         required
@@ -72,10 +99,10 @@ const ContactSection: React.FC = () => {
                       </label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="Tu correo"
                         className="bg-white/5 border-white/10 text-white focus:border-golden"
-                        defaultValue={contactEmail}
                         required
                       />
                     </div>
@@ -87,6 +114,7 @@ const ContactSection: React.FC = () => {
                     </label>
                     <Input
                       id="subject"
+                      name="subject"
                       placeholder="Asunto del mensaje"
                       className="bg-white/5 border-white/10 text-white focus:border-golden"
                       required
@@ -99,6 +127,7 @@ const ContactSection: React.FC = () => {
                     </label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Tu mensaje"
                       className="bg-white/5 border-white/10 text-white focus:border-golden"
                       rows={5}
@@ -107,8 +136,13 @@ const ContactSection: React.FC = () => {
                   </div>
                   
                   <div className="flex justify-center">
-                    <Button type="submit" className="btn-primary" size="lg">
-                      Enviar Mensaje
+                    <Button 
+                      type="submit" 
+                      className="btn-primary" 
+                      size="lg"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
                     </Button>
                   </div>
                 </form>

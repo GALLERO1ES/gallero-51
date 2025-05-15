@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
@@ -9,6 +10,10 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
   const [showRooster, setShowRooster] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [roosterPosition, setRoosterPosition] = useState<{ side: string; vertical: number }>({ 
+    side: 'right', 
+    vertical: 50 
+  });
 
   useEffect(() => {
     // Marcar cuando los elementos están cargados
@@ -16,17 +21,80 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
     
     // Animation cycle for the rooster
     const interval = setInterval(() => {
+      // Generate random position
+      const sides = ['right', 'left', 'top', 'bottom'];
+      const randomSide = sides[Math.floor(Math.random() * sides.length)];
+      const randomVertical = Math.floor(Math.random() * 60) + 20; // Between 20% and 80%
+      
+      setRoosterPosition({
+        side: randomSide,
+        vertical: randomVertical
+      });
+      
       setShowRooster(true);
       
       const timeout = setTimeout(() => {
         setShowRooster(false);
-      }, 3000); // Show for 3 seconds
+      }, 5000); // Show for 5 seconds
       
       return () => clearTimeout(timeout);
-    }, 10000); // Repeat every 10 seconds
+    }, 40000); // Repeat every 40 seconds
     
-    return () => clearInterval(interval);
+    // Initial appearance after 2 seconds
+    const initialTimeout = setTimeout(() => {
+      setShowRooster(true);
+      
+      const hideTimeout = setTimeout(() => {
+        setShowRooster(false);
+      }, 5000);
+      
+      return () => clearTimeout(hideTimeout);
+    }, 2000);
+    
+    return () => {
+      clearInterval(interval);
+      clearTimeout(initialTimeout);
+    };
   }, []);
+
+  const getRoosterStyle = () => {
+    switch(roosterPosition.side) {
+      case 'right':
+        return {
+          right: 0,
+          top: `${roosterPosition.vertical}%`,
+          transform: 'translate(50%, -50%) rotate(-6deg)',
+          left: 'auto',
+          bottom: 'auto'
+        };
+      case 'left':
+        return {
+          left: 0,
+          top: `${roosterPosition.vertical}%`,
+          transform: 'translate(-50%, -50%) rotate(6deg)',
+          right: 'auto',
+          bottom: 'auto'
+        };
+      case 'top':
+        return {
+          top: 0,
+          left: `${roosterPosition.vertical}%`,
+          transform: 'translate(-50%, -50%) rotate(-15deg)',
+          right: 'auto',
+          bottom: 'auto'
+        };
+      case 'bottom':
+        return {
+          bottom: 0,
+          left: `${roosterPosition.vertical}%`,
+          transform: 'translate(-50%, 50%) rotate(15deg)',
+          right: 'auto',
+          top: 'auto'
+        };
+      default:
+        return {};
+    }
+  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -139,12 +207,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ ageVerified }) => {
         </div>
       </div>
       
-      {/* Animación del Gallo - Modificado para que se asome más */}
-      <div className={`fixed right-0 top-1/2 transform -translate-y-1/2 z-40 transition-all duration-1000 ease-in-out ${showRooster ? 'translate-x-[50%]' : 'translate-x-full'}`}>
+      {/* Animación del Gallo - Ahora con posiciones aleatorias */}
+      <div className={`fixed z-40 transition-all duration-1000 ease-in-out ${showRooster ? 'opacity-100' : 'opacity-0'}`} style={getRoosterStyle()}>
         <img 
           src="/lovable-uploads/df6b1d3e-a626-4824-940f-c3017edb0a21.png" 
           alt="Gallero Mascot" 
-          className="h-64 object-contain transform -rotate-6 animate-pulse-slow"
+          className="h-64 object-contain animate-pulse-slow"
         />
       </div>
     </section>

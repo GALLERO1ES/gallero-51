@@ -59,16 +59,18 @@ const Header: React.FC = () => {
           onClick={scrollToTop}
           className="cursor-pointer transform transition-all duration-300 hover:scale-110"
         >
-          <h1 className="text-2xl md:text-3xl font-bold font-kritik text-white">
-            <span className="text-golden">
-              GALLERO
-            </span>
-          </h1>
+          {/* Replace the text with the logo image */}
+          <img 
+            src="/lovable-uploads/273c3b5c-bc8e-4dbb-91d0-7c358d8fb3b6.png" 
+            alt="GALLERO" 
+            className="h-12 md:h-16 object-contain"
+          />
         </div>
 
         {!isMobile ? (
           <nav>
             <ul className="flex items-center gap-8">
+              <li><button onClick={() => scrollToSection('home')} className="nav-link text-lg font-mexican">Inicio</button></li>
               <li><button onClick={() => scrollToSection('products')} className="nav-link text-lg font-mexican">Productos</button></li>
               <li><button onClick={() => scrollToSection('cocktails')} className="nav-link text-lg font-mexican">Cócteles</button></li>
               <li><button onClick={() => scrollToSection('our-story')} className="nav-link text-lg font-mexican">Nuestra Historia</button></li>
@@ -80,22 +82,30 @@ const Header: React.FC = () => {
             variant="ghost"
             size="icon"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-white hover:bg-white/10 z-50"
+            className={`text-white z-50 ${mobileMenuOpen ? "bg-golden/50 hover:bg-golden/60" : "hover:bg-white/10"}`}
           >
             <Menu />
           </Button>
         )}
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - Adding better background for visibility */}
       {isMobile && mobileMenuOpen && (
         <div className="fixed inset-0 top-16 bg-black/95 backdrop-blur-md z-30 animate-fade-in">
           <nav className="container-fluid py-10">
             <ul className="flex flex-col gap-6 text-center">
               <li>
                 <button 
+                  onClick={() => scrollToSection('home')} 
+                  className="text-2xl nav-link inline-block font-mexican bg-black/40 px-6 py-2 rounded-lg w-full"
+                >
+                  Inicio
+                </button>
+              </li>
+              <li>
+                <button 
                   onClick={() => scrollToSection('products')} 
-                  className="text-2xl nav-link inline-block font-mexican"
+                  className="text-2xl nav-link inline-block font-mexican bg-black/40 px-6 py-2 rounded-lg w-full"
                 >
                   Productos
                 </button>
@@ -103,7 +113,7 @@ const Header: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('cocktails')} 
-                  className="text-2xl nav-link inline-block font-mexican"
+                  className="text-2xl nav-link inline-block font-mexican bg-black/40 px-6 py-2 rounded-lg w-full"
                 >
                   Cócteles
                 </button>
@@ -111,7 +121,7 @@ const Header: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('our-story')} 
-                  className="text-2xl nav-link inline-block font-mexican"
+                  className="text-2xl nav-link inline-block font-mexican bg-black/40 px-6 py-2 rounded-lg w-full"
                 >
                   Nuestra Historia
                 </button>
@@ -119,7 +129,7 @@ const Header: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('contact')} 
-                  className="text-2xl nav-link inline-block font-mexican"
+                  className="text-2xl nav-link inline-block font-mexican bg-black/40 px-6 py-2 rounded-lg w-full"
                 >
                   Contacto
                 </button>
