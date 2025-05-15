@@ -22,7 +22,7 @@ const ProductsSection: React.FC = () => {
       id: 2,
       name: "Tequila Crema de Fresa",
       description: "Nuestra mezcla insignia, combinando tequila premium con la dulce esencia de crema de fresa para una experiencia excepcionalmente suave.",
-      image: "/lovable-uploads/dcc56214-4a30-442f-b741-07f29b5d7239.png",
+      image: "/lovable-uploads/e2498eb7-c7cd-45b0-9999-7861aeb9fbcf.png",
       color: "from-pink-500/20 to-red-500/20"
     }
   ];
