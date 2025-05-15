@@ -44,7 +44,7 @@ const RoosterAnimation: React.FC<RoosterAnimationProps> = ({
       style={getRoosterStyle()}
     >
       <img
-        src="/lovable-uploads/df6b1d3e-a626-4824-940f-c3017edb0a21.png"
+        src="/lovable-uploads/ee1b451c-2ed1-4c21-a004-a4d635f76c50.png"
         alt="Gallero Mascot"
         className={`h-64 object-contain animate-pulse-slow ${
           roosterPosition.side === "left" ? "scale-x-[-1]" : ""
