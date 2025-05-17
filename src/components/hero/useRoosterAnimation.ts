@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 
 interface RoosterPosition {
@@ -13,7 +14,7 @@ export const useRoosterAnimation = () => {
   });
 
   useEffect(() => {
-    // Animation cycle for the rooster - now only appearing from right side
+    // Animation cycle for the rooster - appearing from right side every 30 seconds
     const interval = setInterval(() => {
       // Generate random vertical position but keep the side always right
       const randomVertical = Math.floor(Math.random() * 60) + 20; // Between 20% and 80%
@@ -30,7 +31,7 @@ export const useRoosterAnimation = () => {
       }, 5000); // Show for 5 seconds
 
       return () => clearTimeout(timeout);
-    }, 40000); // Repeat every 40 seconds
+    }, 30000); // Repeat every 30 seconds (changed from 40000)
 
     // Initial appearance after 2 seconds
     const initialTimeout = setTimeout(() => {

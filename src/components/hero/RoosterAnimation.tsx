@@ -14,9 +14,9 @@ const RoosterAnimation: React.FC<RoosterAnimationProps> = ({
   roosterPosition,
 }) => {
   const getRoosterStyle = () => {
-    // Now only showing from right side with half of the image visible
+    // Now showing 3/4 of the image from right to left
     return {
-      right: "-32%", // This makes only half of the rooster visible
+      right: "-25%", // This makes 3/4 of the rooster visible (was -32%)
       top: `${roosterPosition.vertical}%`,
       transform: "translate(0, -50%) rotate(-6deg)",
     };
