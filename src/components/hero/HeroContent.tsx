@@ -67,7 +67,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ isLoaded }) => {
             }`}
           >
             <img
-              src="/lovable-uploads/c76ace31-f44d-40ee-9558-70741d4fc3d4.png"
+              src="/lovable-uploads/82c6fb5f-98be-406b-9a78-d8c6d19476a9.png"
               alt="Gallero Tequila"
               className="h-[700px] object-contain mx-auto transform hover:scale-105 transition-all duration-500 animate-float-slow"
             />
