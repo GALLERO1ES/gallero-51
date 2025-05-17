@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 interface RoosterPosition {
@@ -14,15 +13,13 @@ export const useRoosterAnimation = () => {
   });
 
   useEffect(() => {
-    // Animation cycle for the rooster
+    // Animation cycle for the rooster - now only appearing from right side
     const interval = setInterval(() => {
-      // Generate random position - now only left or right sides to apply mirroring
-      const sides = ["right", "left"];
-      const randomSide = sides[Math.floor(Math.random() * sides.length)];
+      // Generate random vertical position but keep the side always right
       const randomVertical = Math.floor(Math.random() * 60) + 20; // Between 20% and 80%
 
       setRoosterPosition({
-        side: randomSide,
+        side: "right", // Always from the right side
         vertical: randomVertical,
       });
 
