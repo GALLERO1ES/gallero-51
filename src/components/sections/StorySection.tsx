@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 
 const StorySection: React.FC = () => {
   return (
-    <section id="our-story" className="section bg-gradient-to-b from-black to-neutral-900">
+    <section id="our-story" className="section bg-black">
       <div className="container-fluid">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
