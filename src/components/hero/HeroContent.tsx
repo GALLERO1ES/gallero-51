@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
@@ -15,9 +14,9 @@ const HeroContent: React.FC<HeroContentProps> = ({
         
         <div className="text-center md:text-center max-w-xl mx-auto">
           <h1 className={`text-6xl md:text-7xl lg:text-8xl font-bold mb-8 transition-all duration-1000 ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95 translate-y-10"}`}>
-            <span className="text-white font-kritik relative inline-block text-center text-shadow-glow">
+            <span className="text-white font-kritik relative inline-block text-center text-shadow-glow font-semibold">
               GALLERO
-              <div className="absolute -bottom-2 left-0 w-0 h-1 bg-golden animate-expand-line"></div>
+              
             </span>
           </h1>
           <p className={`text-xl md:text-2xl lg:text-3xl mb-10 text-white/90 font-mexican max-w-lg mx-auto transition-all duration-1000 delay-300 ${isLoaded ? "opacity-100" : "opacity-0 translate-y-10"}`}>
