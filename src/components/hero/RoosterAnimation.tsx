@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface RoosterAnimationProps {
   showRooster: boolean;
@@ -13,18 +13,38 @@ const RoosterAnimation: React.FC<RoosterAnimationProps> = ({
   showRooster,
   roosterPosition,
 }) => {
+  const [animationPosition, setAnimationPosition] = useState<number>(100);
+
+  // Animation effect - slide from right to left
+  useEffect(() => {
+    if (showRooster) {
+      // Start from off-screen to the right
+      setAnimationPosition(100);
+      
+      // Animate to the middle-right position
+      const animationTimer = setTimeout(() => {
+        setAnimationPosition(-25); // This is the final position (shows 3/4 of the rooster)
+      }, 100);
+      
+      return () => clearTimeout(animationTimer);
+    } else {
+      // Move off-screen to the left when hiding
+      setAnimationPosition(-120);
+    }
+  }, [showRooster]);
+
   const getRoosterStyle = () => {
-    // Now showing 3/4 of the image from right to left
     return {
-      right: "-25%", // This makes 3/4 of the rooster visible (was -32%)
+      right: `${animationPosition}%`,
       top: `${roosterPosition.vertical}%`,
       transform: "translate(0, -50%) rotate(-6deg)",
+      transition: "right 1.5s ease-out", // Smooth sliding animation
     };
   };
 
   return (
     <div
-      className={`fixed z-40 transition-all duration-1000 ease-in-out ${
+      className={`fixed z-40 transition-opacity duration-1000 ${
         showRooster ? "opacity-100" : "opacity-0"
       }`}
       style={getRoosterStyle()}
