@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
-import { Instagram } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 
 const ContactSection: React.FC = () => {
   const contactEmail = "contacto@gallero.es";
@@ -27,9 +27,19 @@ const ContactSection: React.FC = () => {
         throw new Error("Por favor, introduce un correo electrónico válido.");
       }
       
-      // This would typically be an API call to your backend
-      // For now we'll simulate sending the email
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Prepare email content for mailto link
+      const mailtoBody = encodeURIComponent(
+        `Mensaje de: ${name}\nEmail: ${email}\n\n${message}`
+      );
+      
+      // Open mailto link in new window
+      window.open(`mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`, '_blank');
+      
+      // Create email link for mobile devices that might not support mailto protocol
+      const emailLink = document.createElement('a');
+      emailLink.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
+      emailLink.target = '_blank';
+      emailLink.click();
       
       toast.success("¡Mensaje enviado correctamente!");
       // Reset form
@@ -68,6 +78,10 @@ const ContactSection: React.FC = () => {
                   <a href="https://www.instagram.com/gallero_es/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-golden/30 transition-colors">
                     <span className="sr-only">Instagram</span>
                     <Instagram className="text-white" size={20} />
+                  </a>
+                  <a href={`mailto:${contactEmail}`} className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-golden/30 transition-colors">
+                    <span className="sr-only">Email</span>
+                    <Mail className="text-white" size={20} />
                   </a>
                 </div>
               </div>

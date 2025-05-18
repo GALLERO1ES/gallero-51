@@ -28,7 +28,7 @@ const ProductsSection: React.FC = () => {
             <span className="text-gradient">Nuestros Productos</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Descubre nuestra gama de tequilas premium, cada uno elaborado con pasión y precisión para ofrecer una experiencia de bebida excepcional.
+            Descubre nuestra gama de cremas con tequila, cada una elaborada con pasión y precisión para ofrecer una experiencia de bebida excepcional.
           </p>
         </div>
         

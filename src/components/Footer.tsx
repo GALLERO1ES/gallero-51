@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h4 className="text-xl font-bold text-white mb-4 font-kritik">GALLERO</h4>
-            <p className="text-gray-400 mb-4 font-mexican">Elaborado a la perfección. Un producto que cuando lo pruebes no querrás beber otra cosa.</p>
+            <p className="text-gray-400 mb-4 font-mexican">Donde canta el gallero, los demás guardan silencio.</p>
             <p className="text-gray-400 text-sm font-mexican">
               Bebe con responsabilidad.
             </p>
