@@ -18,7 +18,7 @@ const ProductsSection: React.FC = () => {
     id: 2,
     name: "GALLERO crema de fresa con tequila",
     description: "Nuestra mezcla insignia, combinando tequila premium con la dulce esencia de crema de fresa para una experiencia excepcionalmente suave.",
-    image: "/lovable-uploads/35d49e6a-65c8-48a7-afd8-f1bf3cf84bc4.png",
+    image: "/lovable-uploads/67fd8436-5f8d-4c0e-8438-b8446d494763.png",
     color: "from-pink-500/20 to-red-500/20"
   }];
   return <section id="products" className="section bg-black">
