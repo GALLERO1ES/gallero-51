@@ -1,6 +1,4 @@
-
 import React from "react";
-
 interface Product {
   id: number;
   name: string;
@@ -8,27 +6,21 @@ interface Product {
   image: string;
   color: string;
 }
-
 const ProductsSection: React.FC = () => {
-  const products: Product[] = [
-    {
-      id: 1,
-      name: "GALLERO crema de horchata con tequila",
-      description: "Una fusión exquisita de tequila premium con la tradicional horchata mexicana, creando una bebida cremosa con notas de canela y vainilla.",
-      image: "/lovable-uploads/09af178b-0818-4cdc-8747-4708ebea11be.png",
-      color: "from-amber-500/20 to-yellow-500/20"
-    },
-    {
-      id: 2,
-      name: "GALLERO crema de fresa con tequila",
-      description: "Nuestra mezcla insignia, combinando tequila premium con la dulce esencia de crema de fresa para una experiencia excepcionalmente suave.",
-      image: "/lovable-uploads/35d49e6a-65c8-48a7-afd8-f1bf3cf84bc4.png",
-      color: "from-pink-500/20 to-red-500/20"
-    }
-  ];
-
-  return (
-    <section id="products" className="section bg-black">
+  const products: Product[] = [{
+    id: 1,
+    name: "GALLERO crema de horchata con tequila",
+    description: "Una fusión exquisita de tequila premium con la tradicional horchata mexicana, creando una bebida cremosa con notas de canela y vainilla.",
+    image: "/lovable-uploads/09af178b-0818-4cdc-8747-4708ebea11be.png",
+    color: "from-amber-500/20 to-yellow-500/20"
+  }, {
+    id: 2,
+    name: "GALLERO crema de fresa con tequila",
+    description: "Nuestra mezcla insignia, combinando tequila premium con la dulce esencia de crema de fresa para una experiencia excepcionalmente suave.",
+    image: "/lovable-uploads/35d49e6a-65c8-48a7-afd8-f1bf3cf84bc4.png",
+    color: "from-pink-500/20 to-red-500/20"
+  }];
+  return <section id="products" className="section bg-black">
       <div className="container-fluid">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -40,26 +32,18 @@ const ProductsSection: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {products.map((product) => (
-            <div key={product.id} className="glass-card p-6 rounded-2xl relative group">
+          {products.map(product => <div key={product.id} className="glass-card p-6 rounded-2xl relative group">
               <div className={`absolute inset-0 bg-gradient-to-br ${product.color} rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300`}></div>
               <div className="relative z-10">
                 <div className="h-80 flex items-center justify-center mb-6">
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
-                    className="max-h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
-                  />
+                  <img src={product.image} alt={product.name} className="max-h-full object-contain transform group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{product.name}</h3>
+                <h3 className="font-bold mb-3 text-center text-xl">{product.name}</h3>
                 <p className="text-gray-300 mb-6">{product.description}</p>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProductsSection;
