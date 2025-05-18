@@ -1,19 +1,13 @@
-
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-
 const StorySection: React.FC = () => {
-  return (
-    <section id="our-story" className="section bg-black">
+  return <section id="our-story" className="section bg-black">
       <div className="container-fluid">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <Badge variant="outline" className="mb-4 text-golden border-golden px-4 py-1.5">Nuestra Historia</Badge>
+            <Badge variant="outline" className="mb-4 text-golden border-golden px-[240px] py-[11px] rounded-none bg-transparent">Nuestra Historia</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="text-gradient relative">
-                Tradición Mexicana, Espíritu Español
-                <div className="absolute -bottom-2 left-0 w-0 h-1 bg-golden/40 animate-expand-line"></div>
-              </span>
+              
             </h2>
             <p className="text-lg text-gray-300 mb-4">
               Gallero nació en el corazón de Madrid, pero su alma viaja directo desde México.
@@ -31,17 +25,11 @@ const StorySection: React.FC = () => {
           <div className="order-1 lg:order-2">
             <div className="relative group hover-float">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <img 
-                src="/lovable-uploads/f8d7ba3e-69c9-4c42-99dc-ffad8567bd9b.png" 
-                alt="Botellas de Gallero Tequila" 
-                className="relative rounded-lg object-contain w-full max-h-[500px] mx-auto transition-transform duration-300 group-hover:scale-105"
-              />
+              <img src="/lovable-uploads/f8d7ba3e-69c9-4c42-99dc-ffad8567bd9b.png" alt="Botellas de Gallero Tequila" className="relative rounded-lg object-contain w-full max-h-[500px] mx-auto transition-transform duration-300 group-hover:scale-105" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default StorySection;
