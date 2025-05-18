@@ -1,16 +1,14 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-
 interface HeroContentProps {
   isLoaded: boolean;
 }
-
-const HeroContent: React.FC<HeroContentProps> = ({ isLoaded }) => {
-  return (
-    <div className="container relative z-20">
-      <div className="flex items-center justify-center min-h-[70vh] text-center relative">
+const HeroContent: React.FC<HeroContentProps> = ({
+  isLoaded
+}) => {
+  return <div className="container relative z-20">
+      <div className="flex items-center justify-center min-h-[70vh] text-center relative bg-transparent">
         {/* Animated background gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-golden/10 via-golden/5 to-golden/10 rounded-xl blur-xl animate-pulse-slow opacity-30 -z-10"></div>
         
@@ -44,8 +42,6 @@ const HeroContent: React.FC<HeroContentProps> = ({ isLoaded }) => {
           <ChevronDown size={32} />
         </a>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroContent;
