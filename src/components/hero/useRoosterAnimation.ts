@@ -31,7 +31,7 @@ export const useRoosterAnimation = () => {
       }, 5000); // Show for 5 seconds
 
       return () => clearTimeout(timeout);
-    }, 30000); // Repeat every 30 seconds (changed from 40000)
+    }, 30000); // Repeat every 30 seconds
 
     // Initial appearance after 2 seconds
     const initialTimeout = setTimeout(() => {
