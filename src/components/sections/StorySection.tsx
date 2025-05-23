@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 const StorySection: React.FC = () => {
@@ -5,10 +6,11 @@ const StorySection: React.FC = () => {
       <div className="container-fluid">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <Badge variant="outline" className="mb-4 text-golden border-golden px-[240px] py-[11px] rounded-none bg-transparent">Nuestra Historia</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              
-            </h2>
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <span className="text-gradient">Nuestra Historia</span>
+              </h2>
+            </div>
             <p className="text-lg text-gray-300 mb-4">
               Gallero nació en el corazón de Madrid, pero su alma viaja directo desde México.
               Inspirados por la pasión, el sabor y la tradición del tequila auténtico, decidimos crear algo diferente: una crema suave, atrevida y deliciosa, pensada para sorprender.
