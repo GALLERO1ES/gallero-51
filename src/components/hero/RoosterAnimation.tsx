@@ -14,23 +14,23 @@ const RoosterAnimation: React.FC<RoosterAnimationProps> = ({
   showRooster,
   roosterPosition
 }) => {
-  const [animationPosition, setAnimationPosition] = useState<number>(100);
+  const [animationPosition, setAnimationPosition] = useState<number>(-100);
   const isMobile = useIsMobile();
 
-  // Animation effect - slide from bottom to visible position
+  // Animation effect - slide from bottom to top
   useEffect(() => {
     if (showRooster) {
       // Start from off-screen at the bottom
-      setAnimationPosition(100);
+      setAnimationPosition(-100);
 
-      // Animate to the visible position
+      // Animate to the visible position (1/3 from bottom)
       const animationTimer = setTimeout(() => {
-        setAnimationPosition(0);
+        setAnimationPosition(33);
       }, 100);
       return () => clearTimeout(animationTimer);
     } else {
-      // Move off-screen to the bottom when hiding
-      setAnimationPosition(100);
+      // Move off-screen to the top when hiding
+      setAnimationPosition(150);
     }
   }, [showRooster, isMobile]);
 
@@ -40,9 +40,9 @@ const RoosterAnimation: React.FC<RoosterAnimationProps> = ({
     
     return {
       right: isMobile ? "10px" : "20px",
-      bottom: `${animationPosition}%`,
-      transform: "translateY(100%) rotate(-6deg)",
-      transition: "bottom 1.5s ease-out",
+      bottom: `${animationPosition}vh`,
+      transform: "rotate(-6deg)",
+      transition: "bottom 3s ease-in-out",
       height: maxHeight,
       width: "auto",
       zIndex: 40,
