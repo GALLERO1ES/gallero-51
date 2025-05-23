@@ -1,5 +1,7 @@
+
 import React, { useEffect, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 interface RoosterAnimationProps {
   showRooster: boolean;
   roosterPosition: {
@@ -7,6 +9,7 @@ interface RoosterAnimationProps {
     vertical: number;
   };
 }
+
 const RoosterAnimation: React.FC<RoosterAnimationProps> = ({
   showRooster,
   roosterPosition
@@ -14,41 +17,50 @@ const RoosterAnimation: React.FC<RoosterAnimationProps> = ({
   const [animationPosition, setAnimationPosition] = useState<number>(100);
   const isMobile = useIsMobile();
 
-  // Animation effect - slide from right to left
+  // Animation effect - slide from bottom to visible position
   useEffect(() => {
     if (showRooster) {
-      // Start from off-screen to the right
+      // Start from off-screen at the bottom
       setAnimationPosition(100);
 
-      // Animate to the middle-right position showing only 3/4 of the image
+      // Animate to the visible position
       const animationTimer = setTimeout(() => {
-        // This is the final position (shows 3/4 of the rooster on all screen sizes)
-        setAnimationPosition(isMobile ? -5 : -25);
+        setAnimationPosition(0);
       }, 100);
       return () => clearTimeout(animationTimer);
     } else {
-      // Move off-screen to the left when hiding
-      setAnimationPosition(-120);
+      // Move off-screen to the bottom when hiding
+      setAnimationPosition(100);
     }
   }, [showRooster, isMobile]);
-  const getRoosterStyle = () => {
-    // Responsive width based on screen size
-    const width = isMobile ? "75vw" : "40vw";
-    const clipPath = "inset(0 0 0 25%)"; // Clip 25% from the left side (shows 3/4)
 
+  const getRoosterStyle = () => {
+    // Height limited to 1/3 of screen height
+    const maxHeight = "33vh";
+    
     return {
-      right: `${animationPosition}%`,
-      top: `${roosterPosition.vertical}%`,
-      transform: "translate(0, -50%) rotate(-6deg)",
-      transition: "right 1.5s ease-out",
-      // Smooth sliding animation
-      width: width,
-      clipPath: clipPath,
-      overflow: "hidden"
+      right: isMobile ? "10px" : "20px",
+      bottom: `${animationPosition}%`,
+      transform: "translateY(100%) rotate(-6deg)",
+      transition: "bottom 1.5s ease-out",
+      height: maxHeight,
+      width: "auto",
+      zIndex: 40,
     };
   };
-  return <div className={`fixed z-40 transition-opacity duration-1000 ${showRooster ? "opacity-100" : "opacity-0"}`} style={getRoosterStyle()}>
-      <img alt="Gallero Mascot" className="h-auto w-full object-contain animate-pulse-slow" src="/lovable-uploads/3569deb3-8701-42b8-aaf5-9e6cbf362d60.png" />
-    </div>;
+
+  return (
+    <div 
+      className={`fixed transition-opacity duration-1000 ${showRooster ? "opacity-100" : "opacity-0"}`} 
+      style={getRoosterStyle()}
+    >
+      <img 
+        alt="Gallero Mascot" 
+        className="h-full w-auto object-contain animate-pulse-slow" 
+        src="/lovable-uploads/3569deb3-8701-42b8-aaf5-9e6cbf362d60.png" 
+      />
+    </div>
+  );
 };
+
 export default RoosterAnimation;

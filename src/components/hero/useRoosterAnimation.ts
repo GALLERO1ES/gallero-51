@@ -10,18 +10,15 @@ export const useRoosterAnimation = () => {
   const [showRooster, setShowRooster] = useState(false);
   const [roosterPosition, setRoosterPosition] = useState<RoosterPosition>({
     side: "right",
-    vertical: 50,
+    vertical: 0, // Always from bottom
   });
 
   useEffect(() => {
-    // Animation cycle for the rooster - sliding across the screen every 30 seconds
+    // Animation cycle for the rooster - appearing from bottom every 30 seconds
     const interval = setInterval(() => {
-      // Generate random vertical position but keep the side always right
-      const randomVertical = Math.floor(Math.random() * 60) + 20; // Between 20% and 80%
-
       setRoosterPosition({
-        side: "right", // Always from the right side
-        vertical: randomVertical,
+        side: "right",
+        vertical: 0, // Always from bottom
       });
 
       setShowRooster(true);
