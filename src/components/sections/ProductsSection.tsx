@@ -11,13 +11,13 @@ const ProductsSection: React.FC = () => {
     id: 1,
     name: "GALLERO crema de horchata con tequila",
     description: "Una fusión exquisita de tequila premium con la tradicional horchata mexicana, creando una bebida cremosa con notas de canela y vainilla.",
-    image: "/lovable-uploads/a78fa027-0f7e-4d1f-93d8-7245699e5419.png",
+    image: "/lovable-uploads/a958ae6e-5938-4793-bd73-6effef456a55.png",
     color: "from-amber-500/20 to-yellow-500/20"
   }, {
     id: 2,
     name: "GALLERO crema de fresa con tequila",
     description: "Nuestra mezcla insignia, combinando tequila premium con la dulce esencia de crema de fresa para una experiencia excepcionalmente suave.",
-    image: "/lovable-uploads/75d58265-988d-4873-8af0-c308ffc6e740.png",
+    image: "/lovable-uploads/a8ea852d-0c2e-4ce4-b81b-d81b67c1248a.png",
     color: "from-pink-500/20 to-red-500/20"
   }];
   return <section id="products" className="section bg-black">
