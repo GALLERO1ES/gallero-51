@@ -1,46 +1,39 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
 import { Instagram, Mail } from "lucide-react";
-
 const ContactSection: React.FC = () => {
   const contactEmail = "contacto@gallero.es";
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Get form data
     const formData = new FormData(e.target as HTMLFormElement);
     const name = formData.get('name')?.toString() || '';
     const email = formData.get('email')?.toString() || '';
     const subject = formData.get('subject')?.toString() || '';
     const message = formData.get('message')?.toString() || '';
-    
     try {
       // Simple email validation
       if (!email.includes('@')) {
         throw new Error("Por favor, introduce un correo electrónico válido.");
       }
-      
+
       // Prepare email content for mailto link
-      const mailtoBody = encodeURIComponent(
-        `Mensaje de: ${name}\nEmail: ${email}\n\n${message}`
-      );
-      
+      const mailtoBody = encodeURIComponent(`Mensaje de: ${name}\nEmail: ${email}\n\n${message}`);
+
       // Open mailto link in new window
       window.open(`mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`, '_blank');
-      
+
       // Create email link for mobile devices that might not support mailto protocol
       const emailLink = document.createElement('a');
       emailLink.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
       emailLink.target = '_blank';
       emailLink.click();
-      
       toast.success("¡Mensaje enviado correctamente!");
       // Reset form
       (e.target as HTMLFormElement).reset();
@@ -51,9 +44,7 @@ const ContactSection: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section id="contact" className="section bg-gradient-to-b from-neutral-900 to-black">
+  return <section id="contact" className="section bg-gradient-to-b from-neutral-900 to-black">
       <div className="container-fluid">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
@@ -79,10 +70,7 @@ const ContactSection: React.FC = () => {
                     <span className="sr-only">Instagram</span>
                     <Instagram className="text-white" size={20} />
                   </a>
-                  <a href={`mailto:${contactEmail}`} className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-golden/30 transition-colors">
-                    <span className="sr-only">Email</span>
-                    <Mail className="text-white" size={20} />
-                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -99,26 +87,13 @@ const ContactSection: React.FC = () => {
                       <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
                         Nombre
                       </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="Tu nombre"
-                        className="bg-white/5 border-white/10 text-white focus:border-golden"
-                        required
-                      />
+                      <Input id="name" name="name" placeholder="Tu nombre" className="bg-white/5 border-white/10 text-white focus:border-golden" required />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                         Correo
                       </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="Tu correo"
-                        className="bg-white/5 border-white/10 text-white focus:border-golden"
-                        required
-                      />
+                      <Input id="email" name="email" type="email" placeholder="Tu correo" className="bg-white/5 border-white/10 text-white focus:border-golden" required />
                     </div>
                   </div>
                   
@@ -126,36 +101,18 @@ const ContactSection: React.FC = () => {
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
                       Asunto
                     </label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      placeholder="Asunto del mensaje"
-                      className="bg-white/5 border-white/10 text-white focus:border-golden"
-                      required
-                    />
+                    <Input id="subject" name="subject" placeholder="Asunto del mensaje" className="bg-white/5 border-white/10 text-white focus:border-golden" required />
                   </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
                       Mensaje
                     </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tu mensaje"
-                      className="bg-white/5 border-white/10 text-white focus:border-golden"
-                      rows={5}
-                      required
-                    />
+                    <Textarea id="message" name="message" placeholder="Tu mensaje" className="bg-white/5 border-white/10 text-white focus:border-golden" rows={5} required />
                   </div>
                   
                   <div className="flex justify-center">
-                    <Button 
-                      type="submit" 
-                      className="btn-primary" 
-                      size="lg"
-                      disabled={isSubmitting}
-                    >
+                    <Button type="submit" className="btn-primary" size="lg" disabled={isSubmitting}>
                       {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
                     </Button>
                   </div>
@@ -165,8 +122,6 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
