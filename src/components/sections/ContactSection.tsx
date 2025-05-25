@@ -1,42 +1,116 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
 import { Instagram, Mail } from "lucide-react";
+import emailjs from '@emailjs/browser';
+
 const ContactSection: React.FC = () => {
   const contactEmail = "contacto@gallero.es";
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const validateForm = () => {
+    const newErrors = {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    };
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'El nombre es obligatorio';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'El correo es obligatorio';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Por favor, introduce un correo electrónico válido';
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'El asunto es obligatorio';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'El mensaje es obligatorio';
+    }
+
+    setErrors(newErrors);
+    return Object.values(newErrors).every(error => error === '');
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Clear error when user starts typing
+    if (errors[name as keyof typeof errors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      toast.error("Por favor, corrige los errores en el formulario.");
+      return;
+    }
+
     setIsSubmitting(true);
 
-    // Get form data
-    const formData = new FormData(e.target as HTMLFormElement);
-    const name = formData.get('name')?.toString() || '';
-    const email = formData.get('email')?.toString() || '';
-    const subject = formData.get('subject')?.toString() || '';
-    const message = formData.get('message')?.toString() || '';
     try {
-      // Simple email validation
-      if (!email.includes('@')) {
-        throw new Error("Por favor, introduce un correo electrónico válido.");
-      }
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: contactEmail
+      };
 
-      // Prepare email content for mailto link
-      const mailtoBody = encodeURIComponent(`Mensaje de: ${name}\nEmail: ${email}\n\n${message}`);
+      await emailjs.send(
+        'service_wgiwqvb',
+        'template_e5hct4q',
+        templateParams,
+        'flqILqUyo043-uhy7'
+      );
 
-      // Open mailto link in new window
-      window.open(`mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`, '_blank');
-
-      // Create email link for mobile devices that might not support mailto protocol
-      const emailLink = document.createElement('a');
-      emailLink.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
-      emailLink.target = '_blank';
-      emailLink.click();
-      toast.success("¡Mensaje enviado correctamente!");
+      toast.success("¡Mensaje enviado correctamente! Te responderemos pronto.");
+      
       // Reset form
-      (e.target as HTMLFormElement).reset();
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      setErrors({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+
     } catch (error) {
       console.error("Error sending email:", error);
       toast.error("Ha ocurrido un error al enviar el mensaje. Por favor, inténtalo de nuevo.");
@@ -44,7 +118,9 @@ const ContactSection: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-  return <section id="contact" className="section bg-gradient-to-b from-neutral-900 to-black">
+
+  return (
+    <section id="contact" className="section bg-gradient-to-b from-neutral-900 to-black">
       <div className="container-fluid">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
@@ -70,7 +146,6 @@ const ContactSection: React.FC = () => {
                     <span className="sr-only">Instagram</span>
                     <Instagram className="text-white" size={20} />
                   </a>
-                  
                 </div>
               </div>
             </div>
@@ -85,30 +160,68 @@ const ContactSection: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-                        Nombre
+                        Nombre *
                       </label>
-                      <Input id="name" name="name" placeholder="Tu nombre" className="bg-white/5 border-white/10 text-white focus:border-golden" required />
+                      <Input 
+                        id="name" 
+                        name="name" 
+                        placeholder="Tu nombre" 
+                        className={`bg-white/5 border-white/10 text-white focus:border-golden ${errors.name ? 'border-red-500' : ''}`}
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required 
+                      />
+                      {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-                        Correo
+                        Correo *
                       </label>
-                      <Input id="email" name="email" type="email" placeholder="Tu correo" className="bg-white/5 border-white/10 text-white focus:border-golden" required />
+                      <Input 
+                        id="email" 
+                        name="email" 
+                        type="email" 
+                        placeholder="Tu correo" 
+                        className={`bg-white/5 border-white/10 text-white focus:border-golden ${errors.email ? 'border-red-500' : ''}`}
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required 
+                      />
+                      {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
                     </div>
                   </div>
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
-                      Asunto
+                      Asunto *
                     </label>
-                    <Input id="subject" name="subject" placeholder="Asunto del mensaje" className="bg-white/5 border-white/10 text-white focus:border-golden" required />
+                    <Input 
+                      id="subject" 
+                      name="subject" 
+                      placeholder="Asunto del mensaje" 
+                      className={`bg-white/5 border-white/10 text-white focus:border-golden ${errors.subject ? 'border-red-500' : ''}`}
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                    {errors.subject && <p className="text-red-400 text-sm mt-1">{errors.subject}</p>}
                   </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-                      Mensaje
+                      Mensaje *
                     </label>
-                    <Textarea id="message" name="message" placeholder="Tu mensaje" className="bg-white/5 border-white/10 text-white focus:border-golden" rows={5} required />
+                    <Textarea 
+                      id="message" 
+                      name="message" 
+                      placeholder="Tu mensaje" 
+                      className={`bg-white/5 border-white/10 text-white focus:border-golden ${errors.message ? 'border-red-500' : ''}`}
+                      rows={5} 
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                    {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
                   </div>
                   
                   <div className="flex justify-center">
@@ -122,6 +235,8 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ContactSection;
