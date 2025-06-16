@@ -37,6 +37,7 @@ const Footer: React.FC = () => {
               <li><button onClick={() => scrollToSection('home')} className="text-gray-400 hover:text-golden transition-colors">Inicio</button></li>
               <li><button onClick={() => scrollToSection('products')} className="text-gray-400 hover:text-golden transition-colors">Productos</button></li>
               <li><button onClick={() => scrollToSection('cocktails')} className="text-gray-400 hover:text-golden transition-colors">Cócteles</button></li>
+              <li><Link to="/eventos" className="text-gray-400 hover:text-golden transition-colors">Eventos</Link></li>
               <li><button onClick={() => scrollToSection('our-story')} className="text-gray-400 hover:text-golden transition-colors">Nuestra Historia</button></li>
               <li><button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-golden transition-colors">Contacto</button></li>
             </ul>
