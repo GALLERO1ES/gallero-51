@@ -20,9 +20,9 @@ const AvisoLegal: React.FC = () => {
               
               <h2 className="text-2xl font-bold text-golden mt-8">DATOS IDENTIFICATIVOS</h2>
               <p>
-                Denominación social: [Nombre de la empresa]<br />
-                NIF: [Número de identificación fiscal]<br />
-                Domicilio social: [Dirección completa]<br />
+                Denominación social: SANSOL INVESTMENTS S.L.<br />
+                NIF: B87951844<br />
+                Domicilio social: Calle del Castillo 24 28010 MADRID<br />
                 Contacto: contacto@gallero.es<br />
                 Registro Mercantil: [Datos de inscripción]
               </p>
