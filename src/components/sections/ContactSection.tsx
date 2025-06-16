@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -81,11 +80,10 @@ const ContactSection: React.FC = () => {
 
     try {
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
+        user_name: formData.name,
+        user_email: formData.email,
         subject: formData.subject,
-        message: formData.message,
-        to_email: contactEmail
+        message: formData.message
       };
 
       await emailjs.send(
