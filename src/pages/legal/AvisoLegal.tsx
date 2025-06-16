@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -23,8 +22,7 @@ const AvisoLegal: React.FC = () => {
                 Denominación social: SANSOL INVESTMENTS S.L.<br />
                 NIF: B87951844<br />
                 Domicilio social: Calle del Castillo 24 28010 MADRID<br />
-                Contacto: contacto@gallero.es<br />
-                Registro Mercantil: [Datos de inscripción]
+                Contacto: contacto@gallero.es
               </p>
               
               <h2 className="text-2xl font-bold text-golden mt-8">PROPIEDAD INTELECTUAL E INDUSTRIAL</h2>
