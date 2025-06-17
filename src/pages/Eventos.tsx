@@ -52,9 +52,9 @@ const Eventos: React.FC = () => {
                       padding: 0,
                       margin: 0
                     }}
-                    src="https://www.canva.com/design/DAGqnhw67bE/C9A9nFMUfsjc7ppZKzby3g/watch?embed" 
+                    src="https://www.canva.com/design/DAGqnhw67bE/C9A9nFMUfsjc7ppZKzby3g/watch?embed&autoplay=1&mute=1&controls=0" 
                     allowFullScreen 
-                    allow="fullscreen"
+                    allow="fullscreen; autoplay; muted"
                   />
                 </div>
                 <a 
