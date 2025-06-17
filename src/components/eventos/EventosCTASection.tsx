@@ -5,7 +5,16 @@ import { Calendar } from "lucide-react";
 
 const EventosCTASection: React.FC = () => {
   const scrollToContact = () => {
-    window.location.href = '/#contact';
+    // Si estamos en la página principal, hacer scroll suave
+    if (window.location.pathname === '/') {
+      const element = document.getElementById('contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Si estamos en otra página, redirigir a la página principal con el hash
+      window.location.href = '/#contact';
+    }
   };
 
   return (
