@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -28,11 +27,44 @@ const Eventos: React.FC = () => {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-                  alt="Celebración en evento"
-                  className="w-full h-[400px] object-cover rounded-2xl shadow-2xl"
-                />
+                <div style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: 0,
+                  paddingTop: '66.6667%',
+                  paddingBottom: 0,
+                  boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
+                  marginTop: '1.6em',
+                  marginBottom: '0.9em',
+                  overflow: 'hidden',
+                  borderRadius: '8px',
+                  willChange: 'transform'
+                }}>
+                  <iframe 
+                    loading="lazy" 
+                    style={{
+                      position: 'absolute',
+                      width: '100%',
+                      height: '100%',
+                      top: 0,
+                      left: 0,
+                      border: 'none',
+                      padding: 0,
+                      margin: 0
+                    }}
+                    src="https://www.canva.com/design/DAGqnhw67bE/C9A9nFMUfsjc7ppZKzby3g/watch?embed" 
+                    allowFullScreen 
+                    allow="fullscreen"
+                  />
+                </div>
+                <a 
+                  href="https://www.canva.com/design/DAGqnhw67bE/C9A9nFMUfsjc7ppZKzby3g/watch?utm_content=DAGqnhw67bE&utm_campaign=designshare&utm_medium=embeds&utm_source=link" 
+                  target="_blank" 
+                  rel="noopener"
+                  className="text-sm text-gray-400 hover:text-golden transition-colors"
+                >
+                  Diseño de Pepelu Lopez
+                </a>
               </div>
               <div className="space-y-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-gradient font-kritik">
