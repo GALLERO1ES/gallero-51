@@ -20,7 +20,7 @@ const EventosTypesSection: React.FC = () => {
 
           {/* Corporate Events */}
           <div className="text-center">
-            <img src="/lovable-uploads/588ec196-769c-4a0e-9665-45e9e99beb98.png" alt="Eventos corporativos" className="w-full h-64 object-cover rounded-xl mb-6" />
+            <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Eventos corporativos" className="w-full h-64 object-cover rounded-xl mb-6" />
             <h3 className="text-xl font-bold text-white mb-3 font-kritik">EVENTOS CORPORATIVOS</h3>
             <p className="text-gray-300 font-mexican">
               Cenas de empresa, presentaciones y celebraciones corporativas 
@@ -30,7 +30,7 @@ const EventosTypesSection: React.FC = () => {
 
           {/* Private Parties */}
           <div className="text-center">
-            <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fiestas privadas" className="w-full h-64 object-cover rounded-xl mb-6" />
+            <img src="/lovable-uploads/588ec196-769c-4a0e-9665-45e9e99beb98.png" alt="Fiestas privadas" className="w-full h-64 object-cover rounded-xl mb-6" />
             <h3 className="text-xl font-bold text-white mb-3 font-kritik">FIESTAS PRIVADAS</h3>
             <p className="text-gray-300 font-mexican">
               Cumpleaños, aniversarios, cenas de Navidad y cualquier ocasión 
