@@ -2,8 +2,11 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const EventosCTASection: React.FC = () => {
+  const navigate = useNavigate();
+
   const scrollToContact = () => {
     // Si estamos en la página principal, hacer scroll suave
     if (window.location.pathname === '/') {
@@ -12,8 +15,15 @@ const EventosCTASection: React.FC = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // Si estamos en otra página, redirigir a la página principal con el hash
-      window.location.href = '/#contact';
+      // Si estamos en otra página, navegar a la página principal y luego hacer scroll
+      navigate('/');
+      // Pequeño delay para asegurar que la página se carga antes del scroll
+      setTimeout(() => {
+        const element = document.getElementById('contact');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
   };
 
