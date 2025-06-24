@@ -4,8 +4,25 @@ import { Heart, Users, PartyPopper } from "lucide-react";
 
 const EventosHeroSection: React.FC = () => {
   return (
-    <section className="section bg-gradient-to-b from-black to-neutral-900">
-      <div className="container-fluid">
+    <section className="section bg-gradient-to-b from-black to-neutral-900 relative overflow-hidden">
+      {/* Video de fondo */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+        >
+          <source src="/videocabecero.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay para mejorar la legibilidad del texto */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      {/* Contenido encima del vídeo */}
+      <div className="container-fluid relative z-10">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-golden font-kritik">
             EVENTOS ÚNICOS
