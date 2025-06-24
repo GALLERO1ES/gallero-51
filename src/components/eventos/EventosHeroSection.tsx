@@ -4,29 +4,8 @@ import { Heart, Users, PartyPopper } from "lucide-react";
 
 const EventosHeroSection: React.FC = () => {
   return (
-    <section className="section bg-gradient-to-b from-black to-neutral-900 relative overflow-hidden">
-      {/* Video de fondo */}
-      <div className="absolute inset-0 w-full h-full">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          onError={(e) => console.log("Error loading video:", e)}
-          onLoadStart={() => console.log("Video loading started")}
-          onCanPlay={() => console.log("Video can play")}
-        >
-          <source src="/videocabecero.mp4" type="video/mp4" />
-          Tu navegador no soporta el elemento de video.
-        </video>
-        {/* Overlay para mejorar la legibilidad del texto */}
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
-
-      {/* Contenido encima del vídeo */}
-      <div className="container-fluid relative z-10">
+    <section className="section bg-gradient-to-b from-black to-neutral-900">
+      <div className="container-fluid">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-golden font-kritik">
             EVENTOS ÚNICOS
