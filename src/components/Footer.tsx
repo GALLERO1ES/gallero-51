@@ -8,14 +8,14 @@ const Footer: React.FC = () => {
   
   const scrollToSection = (id: string) => {
     // Si estamos en la página principal, hacer scroll suave
-    if (window.location.pathname === '/') {
+    if (window.location.hash === '#/' || window.location.hash === '') {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
       // Si estamos en otra página, redirigir a la página principal con el hash
-      window.location.href = `/#${id}`;
+      window.location.href = `${import.meta.env.BASE_URL}#${id}`;
     }
   };
 

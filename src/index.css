@@ -6,7 +6,7 @@
 /* Add Kritik-trial font */
 @font-face {
   font-family: 'Kritik-trial';
-  src: url('/fonts/Kritik-Semibold-Trial.woff2') format('woff2');
+  src: url('../fonts/Kritik-Semibold-Trial.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -59,7 +59,7 @@
   
   body {
     @apply bg-background text-foreground font-mexican antialiased;
-    background-image: url('/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png');
+    background-image: url('../lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

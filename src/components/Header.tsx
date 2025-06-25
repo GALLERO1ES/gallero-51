@@ -25,7 +25,7 @@ const Header: React.FC = () => {
     }
 
     // Si estamos en la página principal, hacer scroll suave
-    if (window.location.pathname === '/') {
+    if (window.location.hash === '#/' || window.location.hash === '') {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({
@@ -34,18 +34,18 @@ const Header: React.FC = () => {
       }
     } else {
       // Si estamos en otra página, redirigir a la página principal con el hash
-      window.location.href = `/#${id}`;
+      window.location.href = `${import.meta.env.BASE_URL}#${id}`;
     }
   };
 
   const scrollToTop = () => {
-    if (window.location.pathname === '/') {
+    if (window.location.hash === '#/' || window.location.hash === '') {
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
     } else {
-      window.location.href = '/';
+      window.location.href = import.meta.env.BASE_URL;
     }
   };
 
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled || mobileMenuOpen ? "bg-black/80 backdrop-blur-md py-2 shadow-lg" : "bg-transparent py-6"}`}>
       <div className="container-fluid flex items-center justify-between">
         <div onClick={scrollToTop} className="cursor-pointer transform transition-all duration-300 hover:scale-110">
-          <img src="/lovable-uploads/273c3b5c-bc8e-4dbb-91d0-7c358d8fb3b6.png" alt="GALLERO" className="h-12 md:h-16 object-contain" />
+          <img src={`${import.meta.env.BASE_URL}lovable-uploads/273c3b5c-bc8e-4dbb-91d0-7c358d8fb3b6.png`} alt="GALLERO" className="h-12 md:h-16 object-contain" />
         </div>
 
         {!isMobile ? (
