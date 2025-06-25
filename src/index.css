@@ -3,14 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-/* Add Kritik-trial font */
-@font-face {
-  font-family: 'Kritik-trial';
-  src: url('../fonts/Kritik-Semibold-Trial.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
 
 @tailwind base;
 @tailwind components;
@@ -69,7 +61,7 @@
   }
 
   h1, h2, h3, h4, h5 {
-    @apply font-kritik;
+    @apply font-playfair;
   }
 }
 

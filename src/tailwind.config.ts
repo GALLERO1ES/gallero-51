@@ -23,7 +23,6 @@ export default {
         inter: ['Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         playfair: ['Playfair Display', 'serif'],
-        kritik: ['Kritik-trial', 'sans-serif'],
         times: ['Times New Roman', 'serif'],
         mexican: ['Permanent Marker', 'cursive'],
       },
