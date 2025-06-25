@@ -59,7 +59,7 @@
   
   body {
     @apply bg-background text-foreground font-mexican antialiased;
-    background-image: url('/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png');
+    background-image: url('../public/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

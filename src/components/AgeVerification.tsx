@@ -42,9 +42,9 @@ const AgeVerification: React.FC<AgeVerificationProps> = ({ onVerify }) => {
         </div>
         
         <div className="flex justify-center mb-8 relative z-10">
-          <img 
-            src="/lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png" 
-            alt="Gallero" 
+          <img
+            src={`${import.meta.env.BASE_URL}lovable-uploads/624f2092-5f74-4ce5-999d-9fa859ced2ef.png`}
+            alt="Gallero"
             className="h-40 object-contain"
           />
         </div>
