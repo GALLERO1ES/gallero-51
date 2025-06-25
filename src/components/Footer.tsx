@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
       }
     } else {
       // Si estamos en otra página, redirigir a la página principal con el hash
-      window.location.href = `/#${id}`;
+      window.location.href = `${import.meta.env.BASE_URL}#${id}`;
     }
   };
 

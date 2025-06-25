@@ -44,7 +44,7 @@ const Header: React.FC = () => {
         behavior: "smooth",
       });
     } else {
-      window.location.href = "/";
+      window.location.href = import.meta.env.BASE_URL;
     }
   };
 
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
           className="cursor-pointer transform transition-all duration-300 hover:scale-110"
         >
           <img
-            src="/lovable-uploads/273c3b5c-bc8e-4dbb-91d0-7c358d8fb3b6.png"
+            src={`${import.meta.env.BASE_URL}lovable-uploads/273c3b5c-bc8e-4dbb-91d0-7c358d8fb3b6.png`}
             alt="GALLERO"
             className="h-12 md:h-16 object-contain"
           />

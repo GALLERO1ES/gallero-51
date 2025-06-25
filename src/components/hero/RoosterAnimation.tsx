@@ -57,7 +57,7 @@ const RoosterAnimation: React.FC<RoosterAnimationProps> = ({
       <img 
         alt="Gallero Mascot" 
         className="h-full w-auto object-contain animate-pulse-slow" 
-        src="/lovable-uploads/3569deb3-8701-42b8-aaf5-9e6cbf362d60.png" 
+        src={`${import.meta.env.BASE_URL}lovable-uploads/3569deb3-8701-42b8-aaf5-9e6cbf362d60.png`}
       />
     </div>
   );

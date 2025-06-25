@@ -27,7 +27,7 @@ const StorySection: React.FC = () => {
           <div className="order-1 lg:order-2">
             <div className="relative group hover-float">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <img src="/lovable-uploads/f8d7ba3e-69c9-4c42-99dc-ffad8567bd9b.png" alt="Botellas de Gallero Tequila" className="relative rounded-lg object-contain w-full max-h-[500px] mx-auto transition-transform duration-300 group-hover:scale-105" />
+              <img src={`${import.meta.env.BASE_URL}lovable-uploads/f8d7ba3e-69c9-4c42-99dc-ffad8567bd9b.png`} alt="Botellas de Gallero Tequila" className="relative rounded-lg object-contain w-full max-h-[500px] mx-auto transition-transform duration-300 group-hover:scale-105" />
             </div>
           </div>
         </div>
