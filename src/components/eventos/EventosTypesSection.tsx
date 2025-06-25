@@ -10,7 +10,7 @@ const EventosTypesSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Weddings */}
           <div className="text-center">
-            <img alt="Bodas elegantes" className="w-full h-64 object-cover rounded-xl mb-6" src="/lovable-uploads/32ef00c7-2150-4626-900d-5c9f64eda34d.png" />
+            <img alt="Bodas elegantes" className="w-full h-64 object-cover rounded-xl mb-6" src={`${import.meta.env.BASE_URL}lovable-uploads/32ef00c7-2150-4626-900d-5c9f64eda34d.png`} />
             <h3 className="text-xl font-bold text-white mb-3 font-kritik">BODAS</h3>
             <p className="text-gray-300 font-mexican">
               Haz de tu día especial una celebración inolvidable con el toque 
@@ -30,7 +30,7 @@ const EventosTypesSection: React.FC = () => {
 
           {/* Private Parties */}
           <div className="text-center">
-            <img src="/lovable-uploads/588ec196-769c-4a0e-9665-45e9e99beb98.png" alt="Fiestas privadas" className="w-full h-64 object-cover rounded-xl mb-6" />
+            <img src={`${import.meta.env.BASE_URL}lovable-uploads/588ec196-769c-4a0e-9665-45e9e99beb98.png`} alt="Fiestas privadas" className="w-full h-64 object-cover rounded-xl mb-6" />
             <h3 className="text-xl font-bold text-white mb-3 font-kritik">FIESTAS PRIVADAS</h3>
             <p className="text-gray-300 font-mexican">
               Cumpleaños, aniversarios, cenas de Navidad y cualquier ocasión 

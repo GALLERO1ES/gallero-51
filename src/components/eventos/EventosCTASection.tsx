@@ -9,7 +9,7 @@ const EventosCTASection: React.FC = () => {
 
   const scrollToContact = () => {
     // Si estamos en la página principal, hacer scroll suave
-    if (window.location.pathname === '/') {
+    if (window.location.hash === '#/' || window.location.hash === '') {
       const element = document.getElementById('contact');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
